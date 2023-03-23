@@ -8,19 +8,21 @@
 <h2>Résultat</h2>
 
 <?php
-//  1   Déclarer un nombre entier $entier
-$entier = 100;
+// Déclarer un nombre entier
+$somme = 100;
 
-//  2   Convertir les francs en euros
-$euro = money_format(euros);
+// Déclarer un nombre décimal
+$devise = 6.55957;
 
-//  3   Convertir un entier en décimal
-$decimal = number_format ($entier, 2,",",".");
-// echo $decimal;
+//Convertir les francs en euros
+$euro = ($somme/$devise);
 
-//      Pour afficher le résultat
-// echo "Montant en francs : $entier<br>";
+//Convertir un entier en décimal
+$resultat = number_format ($euro, 2,",",".");
 
+// Afficher le résultat
+echo "Montant en francs : $somme<br>";
+echo "$somme francs = $resultat €";
 
 ?>
 

@@ -15,22 +15,22 @@ alors celle-ci est imposable
 //  1   Déclarer la variable $age
 //      et l'afficher avec la fonction echo
    
-$age = 32;
+$age = 18;
     echo " Age: $age<br>";
 
 //  2   Déclarer la variable $sexe
 //      et l'afficher avec la fonction echo
 
-$sexe = "F";
+$sexe = "M";
     echo " Sexe: $sexe<br>";
 
 //  3   Ajouter les conditions
-
-if($age >= 18 && $age < 35){
+// il est possible de considérer plusieurs conditions en ajoutant un pipe ou un espère luètre || ou &&
+if($age >= 18 && $age < 35 && $sexe = "F"){
 
     echo " La personne est Imposable.";
 }
-elseif($age > 20 ){
+elseif($age > 20 && $sexe = "M"){
     echo " La personne est Imposable.";
 }
 else{

@@ -14,7 +14,7 @@ Si la catégorie n’est pas gérée, merci de le préciser.
 <?php
 //  Déclarer la variable
 
-$age = 10 ; 
+$age = 12 ; 
 
 //  Ajouter des Conditions afin d'attribuer
 //un âge dans une catégorie
@@ -33,7 +33,7 @@ elseif($age >= 6 && $age < 7){
     echo " Poussin.";
 }
 else{
-   echo " Trop jeune.";
+   echo " Junior.";
 }
 
 ?>

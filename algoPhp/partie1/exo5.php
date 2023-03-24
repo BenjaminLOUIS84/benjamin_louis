@@ -17,12 +17,15 @@ $devise = 6.55957;
 //Convertir les francs en euros
 $euro = ($somme/$devise);
 
-//Convertir un entier en décimal
-$resultat = number_format ($euro, 2,",",".");
+//Convertir un entier en décimal Methode 1
+$result = round($euro,2);
+
+//Convertir un entier en décimal Methode 2
+//$resultat = number_format ($euro, 2,",",".");
 
 // Afficher le résultat
 echo "Montant en francs : $somme<br>";
-echo "$somme francs = $resultat €";
+echo "$somme francs = $result €";
 
 ?>
 

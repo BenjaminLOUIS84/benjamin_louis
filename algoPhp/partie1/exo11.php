@@ -12,48 +12,34 @@ de voitures présentes dans le tableau.
 
 <?php
 
-//  1   Déclarer les variables et afficher celles ci avec echo
+//   Etape 1    Déclarer le tableau et les éléments texte contenu dans celui ci
 
-$montantpaye = 152;
-echo " Montant à payer : $montantpaye €<br>";
+$tableau = ["Peugeot","Renault","BMW","Mercedes"];
 
-$montantverse = 200;
-echo " Montant versé: $montantverse €<br>";
+//   Etape 2    Pour compter le nombre d'éléments du tableau
+//        Utiliser la fonction count()
 
-//  2   Formuler le calcul et afficher celui-ci
+       // $tailleTableau = count($tableau);
 
-$restant = $montantverse-$montantpaye;
-$billets10 = 0;
-$pieces2 = 0;
-$billets5 = 0;
+//   Etape 3    Pour afficher chaque ligne du tableau
 
-echo " Reste à payer: $restant €<br>";
+     echo $tableau[0];
+     echo $tableau[1];
+     echo $tableau[2];
+     echo $tableau[3];
 
-//  3   Pour faire une séparation
-echo "**********************************<br>";
+//    Etape 4   Pour afficher le nombre d'éléments du tableau
+//              CONCATENATION
+//              Si on fait référence à la fonction de comptage une seul fois
+//              Utiliser la concatenation qui se matérialise par un .
+//              Permet d'ajouter des éléments à la suite, cela permet de simplifier le code
 
-echo "Rendue de monaie: <br>";
+     echo "Ce tableau contient".count($tableau)." éléments<br>"; 
 
-// Pour répartir la monnaie 
+//        Si on fait référence à la fonction plusieurs fois
+//        Délcarer la fonction de comptage (CF Etape 2)
+//        Ecrire echo comme ci dessous:
 
-
-while($restant>=10){
-     $restant = $restant-10;
-     $billets10 ++;}
-
-if($restant >=5){
-     $restant = $restant-5;
-     $billets5 ++;}
-
-while($restant>=2){
-     $restant = $restant-2;
-     $pieces2 ++;}
-   
-
-echo $billets10, " billets de 10€ -" ;  
-echo $billets5, " billet de 5€ -" ;
-echo $pieces2, " pièce de 2€ -" ;
-echo $restant, " pièce de 1€ " ;
-
+//   echo "Ce tableau contient $tailleTableau élements<br>";
 ?>
 

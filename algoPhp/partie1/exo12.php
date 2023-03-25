@@ -21,6 +21,13 @@ $tableau = [
     "Hello"=>"Marie-Claire"
 ];
 
+//  Pour trier le tableau par ordre alphabétique des prénoms
+//  (asort opère sur $value)
+//  (ksort opère sur $key)
+
+asort($tableau);
+
+
 //  Pour vérifier ce que contient le tableau
 
 //          var_dump ($tableau);
@@ -45,11 +52,6 @@ foreach($tableau as $key =>$value){
         </tr><br>";
 }
 
-
-
-//$my_array = $tableau;
-//list($a,$b,$c)= $my_array;
-//echo "<br> $a<br>  $b<br>  $c<br>";
 
 
 ?>

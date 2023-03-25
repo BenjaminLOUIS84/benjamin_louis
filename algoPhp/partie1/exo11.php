@@ -9,37 +9,48 @@ de voitures présentes dans le tableau.
 </p>
 
 <h2>Résultat</h2>
-
+     
 <?php
 
-//   Etape 1    Déclarer le tableau et les éléments texte contenu dans celui ci
+//   Etape 1    Déclarer le tableau et les éléments texte contenu dans celui ci METHODE 1
 
-$tableau = ["Peugeot","Renault","BMW","Mercedes"];
+     $tableau = [" Peugeot "," Renault "," BMW "," Mercedes "];
+     
+//                                                                              METHODE 2
+//   $tableau = array("Peugeot","Renault","BMW","Mercedes");
 
-//   Etape 2    Pour compter le nombre d'éléments du tableau
-//        Utiliser la fonction count()
+//    Etape 2   Pour compter le nombre d'éléments du tableau
+//              Utiliser la fonction de comptage:  count()
 
-       // $tailleTableau = count($tableau);
+//              $tailleTableau = count($tableau);
 
-//   Etape 3    Pour afficher chaque ligne du tableau
-
-     echo $tableau[0];
-     echo $tableau[1];
-     echo $tableau[2];
-     echo $tableau[3];
-
-//    Etape 4   Pour afficher le nombre d'éléments du tableau
+//    Etape 3   Pour afficher le nombre d'éléments du tableau
 //              CONCATENATION
 //              Si on fait référence à la fonction de comptage une seul fois
 //              Utiliser la concatenation qui se matérialise par un .
 //              Permet d'ajouter des éléments à la suite, cela permet de simplifier le code
 
-     echo "Ce tableau contient".count($tableau)." éléments<br>"; 
+     echo "<br>Il y a ".count($tableau)." marques de voitures dans ce tableau:<br>"; 
 
-//        Si on fait référence à la fonction plusieurs fois
-//        Délcarer la fonction de comptage (CF Etape 2)
-//        Ecrire echo comme ci dessous:
+//             Si on fait référence à la fonction plusieurs fois
+//             Délcarer la fonction de comptage (CF Etape 2)
+//             Ecrire echo comme ci dessous:
 
-//   echo "Ce tableau contient $tailleTableau élements<br>";
+//   echo "<br>Il y a " $tailleTableau " marques de voitures dans ce tableau:<br>";
+
+//   Pour afficher les caractéristiques du tableau utiliser: var_dump()               ASTUCE
+
+//   echo var_dump($tableau);
+
+//   Etape 4    Pour afficher chaque ligne du tableau verticalement et avec une puce
+
+//   Mettre le tableau dans une liste
+
+     $my_array = $tableau;
+     list($a,$b,$c,$d)= $my_array;
+
+     echo "<br>o $a<br> o $b<br> o $c<br> o $d<br>";
+
+
 ?>
 

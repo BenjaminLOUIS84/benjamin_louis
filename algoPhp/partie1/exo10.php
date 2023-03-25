@@ -51,10 +51,10 @@ while($restant>=2){
      $pieces2 ++;}
    
 
-echo $billets10, " billets de 10€ -" ;  
-echo $billets5, " billet de 5€ -" ;
-echo $pieces2, " pièce de 2€ -" ;
-echo $restant, " pièce de 1€ " ;
+echo $billets10, "  billets de 10€  - " ;  
+echo $billets5, "  billet de 5€  - " ;
+echo $pieces2, "  pièce de 2€  - " ;
+echo $restant, "  pièce de 1€  " ;
 
 ?>
 

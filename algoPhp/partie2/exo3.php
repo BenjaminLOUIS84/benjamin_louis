@@ -9,7 +9,7 @@ dans un nouvel onglet (_blank).
 <a href="http://www.elan-formation.fr" target="_blank">Accéder au Site Web</a>
 
 <?php
-//      Pour afficher un lien hypertexte il faut écrire une balise a href en html
+//      Pour afficher un lien hypertexte écrire une balise a href en html
 //      Pour que la page s'ouvre dans un nouvel onglet il faut définir "_blank" comme cible
 ?>
 

@@ -47,14 +47,14 @@ switch($langue){
 }
 }
 
-//  Faire appel à la fonction
 //  Utiliser la fonction foreach
 //  pour attribuer la valeur texte des messages (salut-hola-hello) à une autre variable $value
 //  et les destinataires (Mickaël-Virgile-Marie-Claire) à $key
+
+//  Faire appel à la fonction direBonjour pour afficher le tableau
 
 
 foreach($users as $key =>$value){
     direBonjour($value,$key);
 }
-
 ?>

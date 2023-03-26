@@ -9,5 +9,9 @@ en argument, en majuscule et en rouge
 <h2>Résultat</h2>
 
 <?php
-
+echo afficherMessage();
+function afficherMessage() :string{
+    $message = "Voici mon message<br>";
+    return $message;
+}
 ?>

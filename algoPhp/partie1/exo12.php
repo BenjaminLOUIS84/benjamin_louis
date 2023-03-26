@@ -12,46 +12,49 @@ EXEMPLE : tableau -> Mickaël -> FRA, Virgile -> ESP, Marie-Claire -> ANG
 
 <?php
 
-//      TABLEAU ASSOCIATIF Pour associer un message à un nom
-//  Etape 1 Déclarer le Tableau ( => pour associer)
+//      CREER UNE FONCTION PERSONNALISEE
+// Déclarer le Tableau ( => pour associer)
 
-$tableau = [
-    "Salut"=>"Mickaël",
-    "Hola"=>"Virgile",
-    "Hello"=>"Marie-Claire"
+$users = [
+    "Mickaël" => "FR",
+    "Virgile" => "ES",
+    "Marie-Claire" =>"EN"
 ];
 
 //  Pour trier le tableau par ordre alphabétique des prénoms
 //  (asort opère sur $value)
 //  (ksort opère sur $key)
 
-asort($tableau);
-
+ksort($users);
 
 //  Pour vérifier ce que contient le tableau
 
 //          var_dump ($tableau);
 
+//  Créer la fonction personnalisée et utiliser switch case break
+//  Si la variable de $langue correspond à FR alors dire Salut
 
-//  Etape 2 Utiliser la fonction foreach
-//  pour attribuer la valeur texte des messages (salut-hola-hello) à une autre variable $key
-//  et les destinataires (Mickaël-Virgile-Marie-Claire) à $value
-
-//  L'intérêt est de pouvoir adresser le message au destinataire
-//  Afficher les éléments dans des balises <td> au sein d'une balise <tr>
-//  Positionner les balises <td> verticalement pour créer un espace entre les 2 variables
-//  Utiliser une balise <br> après la balise <tr> pour justifier les éléments
-
-
-foreach($tableau as $key =>$value){
-
-      echo 
-        "<tr>
-            <td>".($key)."</td>
-            <td>".($value)."</td>
-        </tr><br>";
+function direBonjour($langue, $prenom){
+switch($langue){
+    case "FR": echo "Salut ".$prenom."<br>";
+        break;
+    case "ES": echo "Hola ".$prenom."<br>";
+        break;
+    case "EN": echo "Hello ".$prenom."<br>";
+        break;
+    default: echo "La langue n'est pas supportée";
+        break;
+}
 }
 
+//  Faire appel à la fonction
+//  Utiliser la fonction foreach
+//  pour attribuer la valeur texte des messages (salut-hola-hello) à une autre variable $value
+//  et les destinataires (Mickaël-Virgile-Marie-Claire) à $key
 
+
+foreach($users as $key =>$value){
+    direBonjour($value,$key);
+}
 
 ?>

@@ -20,10 +20,13 @@ $notes = [10,12,8,19,3,16,11,13,9];
 //  3   Déclarer le nombre de notes avec count
 //  4   Déclarer le calcul de la moyenne arrondi à 2 chiffres après la virgule avec round
 
+
 $somNotes = array_sum($notes);
 $nbNotes = count($notes);
+$moyenne = round($somNotes/$nbNotes, 2);
 
-$moyenne = round($somNotes/$nbNotes, 2); 
+
+
 
 //  5   Afficher les notes  
 
@@ -39,7 +42,6 @@ echo "Les notes obtenues par l'élève sont :
     $notes[8]<br>";
 
 //  6   Afficher la moyenne 
-
 echo "Sa moyenne générale est donc de : $moyenne";
 
 ?>

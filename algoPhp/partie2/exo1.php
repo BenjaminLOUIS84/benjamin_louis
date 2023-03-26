@@ -9,11 +9,15 @@ en argument, en majuscule et en rouge
 <h2>Résultat</h2>
 
 <?php
-$texte = "Mon texte en paramètre";
-$maj = mb_strtoupper($texte);
-$color = '<span style="color: red;">'.$maj.'</span>';
 
-echo $color;
+
+    $texte = "Mon texte en paramètre";
+    $maj = mb_strtoupper($texte);
+    $color = '<span style="color: red;">'.$maj.'</span>';
+
+    echo $color;
+
+
 
 //      Utiliser mb_strtoupper pour afficher en majuscule (accents compris)
 //      CF   $maj
@@ -21,6 +25,13 @@ echo $color;
 //      (Intégrer le texte dans du html et du css)
 //      CF   $color
 
-//      DOIS TROUVER EXISTER une fonction qui combine les 2 attributs
+//      DOIT EXISTER une fonction qui combine les 2 attributs
 //      RECHERCHES EN COURS
+//       
+    
+//  echo convertirMajRouge();
+//     function convertirMajRouge() :string{
+//         $message ="Mon texte en paramètre";
+//         return $message;
+//   }    
 ?>

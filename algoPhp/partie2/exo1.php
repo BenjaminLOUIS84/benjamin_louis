@@ -10,6 +10,8 @@ en argument, en majuscule et en rouge
 
 <?php
 $texte = "Mon texte en paramètre";
-echo strtoupper($texte);
+//echo strtoupper($texte);
+function convertirMajRouge(strtoupper($texte)){
 
+}
 ?>

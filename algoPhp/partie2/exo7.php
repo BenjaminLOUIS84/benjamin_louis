@@ -29,7 +29,8 @@ function genererCheckbox($elements){
        } 
 
 //      La balise input permet de matérialiser des cases à cocher
-//      et value permet de préciser si la case est cochée ou non
+//      TYPE checkbox pour configurer la forme des cases carrée
+//      VALUE permet de préciser si la case est cochée ou non
 //      La balise label suivi de br permet d'afficher le texte verticalement
 
     echo "</form>";

@@ -60,6 +60,7 @@ de voitures présentes dans le tableau.
 //              Afficher ces valeurs à la ligne avec ."<br>"
 //              
      foreach($tableau as $value){echo $value."<br>";}
+     
 
 //   METHODE 3  Utiliser les boucles  for ou while 
 //   pour afficher les éléments de premier au dernier

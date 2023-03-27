@@ -12,24 +12,36 @@ Le tableau passé en argument sera le suivant :
 $capitales = array ("France"=>"Paris","Allemagne"=>"Berlin",
 "USA"=>"Washington","Italie"=>"Rome","Espagne"=>"Madrid");
 </p>
-<a href="https://fr.wikipedia.org/wiki/" target="_blank">Lien</a>;
 
 <h2>Résultat</h2>
 <?php
+
+//  Déclarer le tableau
+
 $capitales = ["France"=>"Paris",
             "Allemagne"=>"Berlin",
             "USA"=>"Washington",
             "Italie"=>"Rome",
             "Espagne"=>"Madrid"];
 
+//  Dans la fonction déclarer l'Url à insérer dans le tableau
 
 function afficherTableHTML($capitales){
+
+    $url = "https://fr.wikipedia.org/wiki/";
+
+//  MODIFIER LE TABLEAU
+//  Ajouter une 3eme colone <th>Lien wiki</th>
+//  Ajouter l'Url dans le tableau
+
     echo "<Table border = 1><th>Pays</th><th>Capital</th><th>Lien wiki</th>";
     foreach ($capitales as $key => $value) {
-        echo"<tr><td>".strtoupper($key)."</td><td>".($value)."</td></tr>";
+        echo"<tr><td>".strtoupper($key)."</td><td>".($value)."</td><td>
+        <a href='https://fr.wikipedia.org/wiki/".$value."'>Lien</a></td></tr>";
         "</table>";
-    }
+    }       
 }
+//  Pour que le tableau soit classé par ordre alphétique en se basant sur $value
 asort($capitales);
 
     echo afficherTableHTML($capitales);

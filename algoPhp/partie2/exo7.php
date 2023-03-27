@@ -2,7 +2,8 @@
 
 <p>
 Créer une fonction personnalisée
-permettant de remplir une liste déroulante à partir d'un tableau de valeurs.
+permettant de générer des cases à cocher.
+On pourra préciser dans le tableau associatif si la case est cochée ou non.
 </p>
 
 <h2>Résultat</h2>
@@ -10,25 +11,29 @@ permettant de remplir une liste déroulante à partir d'un tableau de valeurs.
 
 <?php
 
-//      Déclarer le tableau en prévoyant un espace
-//      pour commencer la liste à partir de Monsieur
+//      Déclarer le tableau associatif
 
-$elements = [" ","Monsieur","Madame","Mademoiselle"];
+$elements = ["Choix 1","Choix 2","Choix 3"];
+
 
 //      Ecrire la fonction de cette façon ci dessous
 
-function afficherListeDeroulante($elements){
-    echo "<select>";                            
-                     // La balise select représente la liste déroulante
+function genererCheckbox($elements){
+    echo "<form>";                  
 
-        foreach ($elements as $value) {
-    
-        echo "<label>$value</label>";       
-        echo "<option value = $value</option>";
+        foreach ($elements as $key => $value) {
+
+        echo "<input type= checkbox value= Yes checked>";
+        echo "<label>$value</label><br>";
+       
        } 
-                     // Les balises label et option permettent d'afficher les éléments du tableau   
-    echo "</select>";
+
+//      La balise input permet de matérialiser des cases à cocher
+//      et value permet de préciser si la case est cochée ou non
+//      La balise label suivi de br permet d'afficher le texte verticalement
+
+    echo "</form>";
 }
-    echo afficherListeDeroulante($elements);
+    echo genererCheckbox($elements);
 
  ?>

@@ -34,12 +34,13 @@ function afficherTableHTML($capitales){
 //  Ajouter une 3eme colone <th>Lien wiki</th>
 //  Ajouter l'Url dans le tableau
 
-    echo "<Table border = 1><th>Pays</th><th>Capital</th><th>Lien wiki</th>";
+    echo "<table border = 1><th>Pays</th><th>Capital</th><th>Lien wiki</th>";
     foreach ($capitales as $key => $value) {
         echo"<tr><td>".strtoupper($key)."</td><td>".($value)."</td><td>
         <a href='https://fr.wikipedia.org/wiki/".$value."'>Lien</a></td></tr>";
-        "</table>";
-    }       
+        
+    } 
+      echo "</table>";  
 }
 //  Pour que le tableau soit classé par ordre alphétique en se basant sur $value
 asort($capitales);

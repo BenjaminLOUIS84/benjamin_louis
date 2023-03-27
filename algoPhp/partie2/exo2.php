@@ -23,11 +23,12 @@ $capitales = array("France"=>"Paris","Allemagne"=>"Berlin","USA"=>"Washington","
 //      Concatener strtoupper à $key pour que les pays soit en majuscule
 
 function afficherTableHTML($capitales){
-    echo "<Table border = 1><th>Pays</th><th>Capital</th>";
+    echo "<table border = 1><th>Pays</th><th>Capital</th>";
     foreach ($capitales as $key => $value) {
         echo"<tr><td>".strtoupper($key)."</td><td>".($value)."</td></tr>";
-        "</table>";
+        
     }
+    echo "</table>";
 }
 //      Pour que le tableau soit classé par ordre alphabétique
 

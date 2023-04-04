@@ -21,9 +21,9 @@ class Personne{
   //Définition des propriétés de la class Personne
         //Propriétés(Variables) de la class Personne qui stock le nom de la personne
       
-    public string $nom;
-    public string $prenom;
-    public DateTime $date;
+    private string $nom;
+    private string $prenom;
+    private DateTime $date;
 
  //METHODE MAGIQUE: Magic Method Constructor
         //Cette méthode est annoncée par __ pour désigner les méthodes à employer

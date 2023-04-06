@@ -36,8 +36,17 @@ class Personne{
     }
  //Entre les {} se trouvent les arguments utilsés pour paramêtrer à l'instanciation
         //(Créer un objet dans la mémoire de l'ordinateur) Utiliser $this pour désigner l'objet et accéder à sa valeur
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
- //Créer une nouvelle fonction pour utiliser dans une phrase les valeurs des variables par concatenation
+        // Le Principe d'encapsulation La portée d'une variable ou fonction
+        
+        //private: une propriété ou méthode private sera accessible seulement au sein de la classe;
+        //public: une propriété ou méthode sera accessible n'importe où
+        
+  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ 
+        //getteur me permet de récupérer la valeur d'une propriété
+        //setteur me permet de attribuer une valeur d'une propriété 
+
+  //Créer une nouvelle fonction pour utiliser dans une phrase les valeurs des variables par concatenation
   
     public function calculerAge(){
         $now = new DateTime();

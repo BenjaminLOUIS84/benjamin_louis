@@ -58,6 +58,7 @@ Cette nouvelle classe hérite de toute les propriétés de la classe éxistante
 
     // Créer une fonction ou méthode: fecth (va chercher)
     //  spécifique à cette nouvelle classe
+    
         public function fetch(){
             echo"Modèle: {$this->marque}";
             echo"<br>"; 

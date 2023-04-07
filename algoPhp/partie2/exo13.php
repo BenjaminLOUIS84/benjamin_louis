@@ -19,9 +19,10 @@ private int $extraSpeed;
 private bool $isStart;
 private int $isDrive;
 private int $isFast;
+private string $isOk;
 
 
-public function __construct($marque, $modele, $nbPortes, $vitesseActuelle, $extraSpeed, $isFast = true, $isDrive = false, $isStart = false){
+public function __construct($marque, $modele, $nbPortes, $vitesseActuelle, $extraSpeed, $isFast = true, $isDrive = false, $isStart = false, $isOk = false){
   
     $this->marque= $marque;
     $this->modele= $modele;
@@ -31,6 +32,7 @@ public function __construct($marque, $modele, $nbPortes, $vitesseActuelle, $extr
     $this->isStart= $isStart;
     $this->isDrive= $isDrive;
     $this->isFast= $isFast;
+    $this->isOk= $isOk;
 }
 
 public function demarrer(){
@@ -76,6 +78,15 @@ public function accelerer(){
 
 }
 
+public function valider(){
+    if($this->isOk){
+        
+        $this->isOk = false;
+        echo "<p>Pour accélérer, il faut démarrer le véhicule " . $this->getNomComplet() . "!" . "</p>"; 
+    }
+
+}
+
 
 public function getNomComplet(){
     return "$this->marque ($this->modele)";
@@ -105,11 +116,14 @@ public function getExtra(){
     return $this->extra;
 }
 
+public function isOk(){
+    return $this->isOk;
+}
 }
 
 
 $vehicule1 = new Voiture("Peugeot", "408", 5, 50, 50, true, true, true);
-$vehicule2 = new Voiture("Citroen", "C4", 3, 0, 20, false, false, false);
+$vehicule2 = new Voiture("Citroen", "C4", 3, 0, 20, false, true, true, true);
 ?>
 
 <div  style="display: flex; flex-direction: row; justify-content: flex-start; align-items: center; text-align: left; gap: 20px; font-size:0.7em;">
@@ -122,6 +136,7 @@ $vehicule2 = new Voiture("Citroen", "C4", 3, 0, 20, false, false, false);
         $vehicule2-> demarrer();
         $vehicule2-> stopper();
         $vehicule2-> accelerer();
+        $vehicule2-> valider();
         $vehicule1-> speed();
         $vehicule2-> speed();
 

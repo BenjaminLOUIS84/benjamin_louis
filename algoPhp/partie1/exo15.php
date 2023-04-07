@@ -19,7 +19,8 @@ CREER UNE CLASS Personne (Commence toujours par une majuscule)
 class Personne{
 
   //Définition des propriétés de la class Personne
-        //Propriétés(Variables) de la class Personne qui stock le nom de la personne
+        //Propriétés(Variables) de la class Personne qui stock le nom de la personne, le prénom 
+        //et DateTime qui représente la date du jour
       
     private string $nom;
     private string $prenom;
@@ -63,7 +64,7 @@ class Personne{
 
 }
 
-//Créer(Déclarer) les animaux
+//Créer(Déclarer) 2 personnes
 
 $p1 = new Personne("DUPONT","Michel","1980-02-19");
 $p2 = new Personne("DUCHEMIN","Alice","1985-01-17");

@@ -8,7 +8,7 @@ class Titulaire{
     private string $ville;
 
     private array $comptes; //Tableau vide qui contient le ou les comptes
-    private array $livrets;
+    //private array $livrets;
 
     //constructeur
     public function __construct($nom, $prenom, $date, $ville){
@@ -27,10 +27,10 @@ class Titulaire{
         $this->comptes[] = $comptes;
         // Equivalent à : array_push($this->comptes, $comptes);
     }
-    public function ajouterLivret(CompteBancaire $comptes) {
-        $this->livrets[] = $livrets;
+    //public function ajouterLivret(CompteBancaire $comptes) {
+        //$this->livrets[] = $livrets;
         // Equivalent à : array_push($this->comptes, $comptes);
-    }
+    //}
 
     public function calculerAge(){
         $now = new DateTime();
@@ -41,17 +41,10 @@ class Titulaire{
 
     }
     public function __toString(){
-        return $this->nom." ".$this->prenom." a ".$this->calculerAge()." ans et domicilié à " 
-        .$this->ville."<br> et dispose d'un ".$this->compte. " et d'un ".$this->livret."<br>";
+        return $this->nom." ".$this->prenom." a ".$this->calculerAge()." ans et est domicilié à " 
+        .$this->ville."<br>";
     }
 
     //getter-setter
 }
-$personne1 = new Titulaire("NEMAR", "Jean", "1980-02-19", "Colmar","Compte Courant","Livret A");
-echo $personne1;
-echo"<br>";
-$personne2 = new Titulaire("MENTATION", "Ali", "1970-03-10", "Noves","Compte Courant","Livret A");
-echo $personne2;
-echo"<br>";
-
 ?>

@@ -25,7 +25,7 @@ class CompteBancaire {
         $this->virer = $virer;
 
         $this->titulaire = $titulaire; //Le Titulaire est initialisé
-        $this->titulaire->ajouterCompte($this); //Fournir toute l'instance en cours de CompteBancaire
+        $titulaire->ajouterCompte($this); //Fournir toute l'instance en cours de CompteBancaire
     }
 
     //méthodes
@@ -46,35 +46,35 @@ class CompteBancaire {
     public function credit(){
         if($this->crediter){
             $this->crediter = true;
-            echo "<p>Si le " . $this->getLabel() . " de " .$this->getInfos() . " est crédité de: " 
+            echo "<p>Si le " . $this->getLabel() .  " est crédité de: " 
             .$this->getMontant(). " " .$this->devise." alors le solde de ce compte sera de: "
             .$this->calculerCredit(). " " .$this->devise.  "</p>"; 
         }else{
             $this->crediter = false;
-            echo "<p>Le  " . $this->getLabel() ." de " .$this->getInfos() . " n'est pas crédité</p>"; 
+            echo "<p>Le  " . $this->getLabel() . " n'est pas crédité</p>"; 
         }
     
     }
     public function debit(){
         if($this->debiter){
             $this->debiter = true;
-            echo "<p>Si le " . $this->getLabel() . " de " .$this->getInfos() . " est débité de: " 
+            echo "<p>Si le " . $this->getLabel() . "  est débité de: " 
             .$this->getMontant(). " " .$this->devise." alors le solde de ce compte sera de: "
             .$this->calculerDebit(). " " .$this->devise.  "</p>";
         }else{
             $this->debiter = false;
-            echo "<p>Le  " . $this->getLabel() ." de " .$this->getInfos() . " n'est pas débité</p>"; 
+            echo "<p>Le  " . $this->getLabel() . " n'est pas débité</p>"; 
         }
 
     }
     public function virement(){
         if($this->virer){
             $this->virer = true;
-            echo "<p>Si un virement de " .$this->getMontant(). " " .$this->devise. " du " . $this->getLabel() . " de " 
-            .$this->getInfos() . " est effectué alors le solde du " .$this->getLabel(). " sera de " .$this->calculerDebit(). " " .$this->devise. "</p>"; 
+            echo "<p>Si un virement de " .$this->getMontant(). " " .$this->devise. " du " . $this->getLabel() .  
+             " est effectué alors le solde du " .$this->getLabel(). " sera de " .$this->calculerDebit(). " " .$this->devise. "</p>"; 
         }else{
             $this->virer = false;
-            echo "<p>Le virement du " . $this->getLabel() ." de " .$this->getInfos() . " n'a pas été effectué</p>"; 
+            echo "<p>Le virement du " . $this->getLabel() . " n'a pas été effectué</p>"; 
         }
 
     }
@@ -95,9 +95,5 @@ class CompteBancaire {
     public function getMontant(){
         return $this->montant;
     }
-
 }
-
-$compte1 = new CompteBancaire("Compte Courant",200,50,"euros","NEMAR Jean");
-$compte2 = new CompteBancaire("Livret A",100,50,"euros","NEMAR Jean");
 ?>

@@ -42,10 +42,20 @@ Afficher toutes les informations d'un compte bancaire, notamment le nom / préno
 
 <?php
 
-// importer les 2 classes
+include "Titulaire.php";// importer les 2 classes
+include "CompteBancaire.php";
 
 // instancier au moins 2 titulaires
+$personne1 = new Titulaire("NEMAR", "Jean", "1980-02-19", "Colmar");
+echo $personne1;
+echo"<br>";
+$personne2 = new Titulaire("MENTATION", "Ali", "1970-03-10", "Noves");
+echo $personne2;
+echo"<br>";
+
 // instancier au moins 2 comptes par titulaire
+$compte1 = new CompteBancaire("Compte Courant",200,50,"euros", $personne1);
+//$compte2 = new CompteBancaire("Livret A",100,50,"euros","NEMAR Jean");
 
 //utiliser les méthodes des 2 classes
 
@@ -56,9 +66,9 @@ Afficher toutes les informations d'un compte bancaire, notamment le nom / préno
 
         <?php
         echo "<br>";
-        echo $compte1;
+       // echo $compte1;
         echo "<br>";
-        echo $compte2;
+        //echo $compte2;
         ?>
 
     </div>
@@ -98,15 +108,12 @@ Afficher toutes les informations d'un compte bancaire, notamment le nom / préno
         <?php
         echo $compte1->credit();
         echo $compte1->debit();
-        echo $compte2->credit();
-        echo $compte2->debit();
+        //echo $compte2->credit();
+        //echo $compte2->debit();
         echo $compte1->virement();
-        echo $compte2->virement();
+       // echo $compte2->virement();
         ?>
 
-<?php
-echo "Fin";
-?>
 
 </body>
 

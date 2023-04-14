@@ -55,7 +55,9 @@ echo"<br>";
 
 // instancier au moins 2 comptes par titulaire
 $compte1 = new CompteBancaire("Compte Courant",200,50,"euros", $personne1);
-//$compte2 = new CompteBancaire("Livret A",100,50,"euros","NEMAR Jean");
+$compte2 = new CompteBancaire("Livret A",100,50,"euros",$personne1);
+$compte3 = new CompteBancaire("Compte Courant",200,50,"euros", $personne2);
+$compte4 = new CompteBancaire("Livret A",100,50,"euros",$personne2);
 
 //utiliser les méthodes des 2 classes
 
@@ -81,20 +83,44 @@ $compte1 = new CompteBancaire("Compte Courant",200,50,"euros", $personne1);
         echo "<br>";
         echo "Titualire: " . $compte1->getInfos();
         echo "<br>";
-        echo "Solde: " . $compte1->getSolde() . " euros"; 
+        echo "Solde: " . $compte1->getSolde() . " euros";
+        echo "<br>";
+        echo "-------------------------------------------------";
+        echo "<br>";
+        echo $compte3->getLabel();
+        echo "<br>";
+        echo "*********************************";
+        echo "<br>";
+        echo "Titualire: " . $compte3->getInfos();
+        echo "<br>";
+        echo "Solde: " . $compte3->getSolde() . " euros";
+        echo "<br>";
+        echo "-------------------------------------------------"; 
         ?>
 
     </div>
     <div  style="display: flex; flex-direction: column; justify-content: flex-start; align-items: left; text-align: left;">
 
         <?php
-        // echo $compte2->getLabel();
-        // echo "<br>";
-        // echo "*********************************";
-        // echo "<br>";
-        // echo "Titulaire: " . $compte2->getInfos();
-        // echo "<br>";
-        // echo "Solde: " . $compte2->getSolde() . " euros";
+        echo $compte2->getLabel();
+        echo "<br>";
+        echo "*********************************";
+        echo "<br>";
+        echo "Titulaire: " . $compte2->getInfos();
+        echo "<br>";
+        echo "Solde: " . $compte2->getSolde() . " euros";
+        echo "<br>";
+        echo "-------------------------------------------------";
+        echo "<br>";
+        echo $compte4->getLabel();
+        echo "<br>";
+        echo "*********************************";
+        echo "<br>";
+        echo "Titualire: " . $compte4->getInfos();
+        echo "<br>";
+        echo "Solde: " . $compte4->getSolde() . " euros";
+        echo "<br>";
+        echo "-------------------------------------------------";
         ?>
 
     </div>

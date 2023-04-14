@@ -28,7 +28,7 @@ Afficher toutes les informations d'un compte bancaire, notamment le nom / préno
 </p>
 
 <h2>Résultat</h2>
-
+<p>Titulaire et Comptes Bancaires</p>
 
 <?php
 
@@ -39,13 +39,15 @@ class Titulaire {
     private DateTime $date;
     private string $ville;
     private string $Compte;
+    private string $livret;
 
-    public function __construct($nom, $prenom, $date, $ville, $compte){
+    public function __construct($nom, $prenom, $date, $ville, $compte, $livret){
         $this->nom = $nom;  
         $this->prenom = $prenom;
         $this->date = new DateTime($date);
         $this->ville = $ville;
         $this->compte = $compte;
+        $this->livret = $livret;
     }
 
     public function calculerAge(){
@@ -58,14 +60,14 @@ class Titulaire {
     }
 
     public function __toString(){
-        return $this->nom." ".$this->prenom." a ".$this->calculerAge()." ans et habite à " 
-        .$this->ville." et dispose d'un ".$this->compte."<br>";
+        return $this->nom." ".$this->prenom." a ".$this->calculerAge()." ans et domicilié à " 
+        .$this->ville."<br> et dispose d'un ".$this->compte. " et d'un ".$this->livret."<br>";
     }
 
 
 }
 
-$personne1 = new Titulaire("NEMAR", "Jean", "1980-02-19", "Colmar","Compte Courant");
+$personne1 = new Titulaire("NEMAR", "Jean", "1980-02-19", "Colmar","Compte Courant","Livret A");
 echo $personne1;
 echo"<br>";
 
@@ -96,7 +98,19 @@ class Compte {
         return "Le ".$this->label." de ".$this->titulaire." présente un solde de " 
         .$this->soldeInit." ".$this->devise. "<br>";
     }
-    
+
+    public function getLabel(){
+        return $this->label;
+    }
+
+    public function getInfos(){
+        return $this->titulaire;
+    }
+
+    public function getSolde(){
+        return $this->soldeInit;
+    }
+
     // public function crediter(){
     //     if($soldeInit){
     //         echo "<p>Le" .$this->label. " est crédité de X euros</p>";
@@ -118,9 +132,65 @@ class Compte {
 }
 
 $compte1 = new Compte("Compte Courant",200,"euros","NEMAR Jean");
-echo $compte1;
-
-
 ?>
 
+
+<?php
+
+ class LivretA extends Compte{
+   
+     public function __construct($label, $soldeInit, $devise, $titulaire){
+        parent::__construct($label, $soldeInit, $devise, $titulaire);
+        }
+
+//     public function fetch(){
+//         echo ": "
+//         echo "<br>";
+
+     //}
+}
+
+$compte2 = new LivretA("LivretA",100,"euros","NEMAR Jean");
+?>
+
+
+<div  style="display: flex; flex-direction: row; justify-content: flex-start; align-items: center; text-align: left; gap: 20px; font-size:0.7em;">
+    <div  style="display: flex; flex-direction: column; justify-content: left; align-items: left; text-align: left;">
+
+        <?php
+        echo "<br>";
+        echo $compte1;
+        echo "<br>";
+        echo $compte2;
+
+        ?>
+    </div>
+    <div  style="display: flex; flex-direction: column; justify-content: flex-start; align-items: left; text-align: left;">
+
+        <?php
+        echo $compte1->getLabel();
+        echo "<br>";
+        echo "*********************************";
+        echo "<br>";
+        echo "Titualire: " . $compte1->getInfos();
+        echo "<br>";
+        echo "Solde: " . $compte1->getSolde() . " euros"; 
+        ?>
+    </div>
+    <div  style="display: flex; flex-direction: column; justify-content: flex-start; align-items: left; text-align: left;">
+
+        <?php
+        echo $compte2->getLabel();
+        echo "<br>";
+        echo "*********************************";
+        echo "<br>";
+        echo "Titulaire: " . $compte2->getInfos();
+        echo "<br>";
+        echo "Solde: " . $compte2->getSolde() . "euros";
+        ?>
+    </div>
+
+</div>
+
+<h3>Opérations et Virements</h3>
 

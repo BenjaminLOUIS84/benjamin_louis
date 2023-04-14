@@ -22,7 +22,8 @@ private int $isFast;
 private string $isOk;
 
 
-public function __construct($marque, $modele, $nbPortes, $vitesseActuelle, $extraSpeed, $isFast = true, $isDrive = false, $isStart = false, $isOk = false){
+public function __construct($marque, $modele, $nbPortes, $vitesseActuelle, $extraSpeed,
+                            $isFast = true, $isDrive = false, $isStart = false, $isOk = false){
   
     $this->marque= $marque;
     $this->modele= $modele;

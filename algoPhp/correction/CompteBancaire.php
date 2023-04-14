@@ -99,5 +99,5 @@ class CompteBancaire {
 }
 
 $compte1 = new CompteBancaire("Compte Courant",200,50,"euros","NEMAR Jean");
-
+$compte2 = new CompteBancaire("Livret A",100,50,"euros","NEMAR Jean");
 ?>

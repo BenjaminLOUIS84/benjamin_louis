@@ -28,9 +28,11 @@ Afficher toutes les informations d'un compte bancaire, notamment le nom / préno
 </p>
 
 <h2>Résultat</h2>
-<p>Titulaire et Comptes Bancaires</p>
+<h3>Titulaire et Comptes Bancaires</h3>
 
 <?php
+
+///////////////////////////////////////////////PARAMETRER LA CLASSE TITULAIRE ET CREER UN OBJET ISSU DE CETTE CLASSE////////////////////
 
 class Titulaire {
 
@@ -63,13 +65,13 @@ class Titulaire {
         return $this->nom." ".$this->prenom." a ".$this->calculerAge()." ans et domicilié à " 
         .$this->ville."<br> et dispose d'un ".$this->compte. " et d'un ".$this->livret."<br>";
     }
-
-
 }
 
 $personne1 = new Titulaire("NEMAR", "Jean", "1980-02-19", "Colmar","Compte Courant","Livret A");
 echo $personne1;
 echo"<br>";
+
+/////////////////////////////////////////////////////PARAMETRER LA CLASSE COMPTE ET CREER 1 OBJET ISSU DE CETTE CLASSE////////////////////////////////////// 
 
 class Compte {
 
@@ -77,21 +79,20 @@ class Compte {
     private int $soldeInit;
     private string $devise;
     private string $titulaire;
-    // private bool $crediter;
-    // private bool $debiter;
-    //private bool $virer
+    private bool $crediter;
+    private bool $debiter;
+    private bool $virer;
     
 
     public function __construct($label, $soldeInit, $devise, $titulaire, 
-        //$crediter=false, $debiter= false, $virer=false
-        ){
+        $crediter=true, $debiter= true, $virer=true){
         $this->label = $label;
         $this->soldeInit = $soldeInit;
         $this->devise = $devise;
         $this->titulaire = $titulaire;
-        // $this->crediter = $crediter;
-        // $this->debiter = $debiter;
-        // $this->virer = $virer;
+        $this->crediter = $crediter;
+        $this->debiter = $debiter;
+        $this->virer = $virer;
     }
 
     public function __toString(){
@@ -111,48 +112,54 @@ class Compte {
         return $this->soldeInit;
     }
 
-    // public function crediter(){
-    //     if($soldeInit){
-    //         echo "<p>Le" .$this->label. " est crédité de X euros</p>";
-    //     }else{
-    //         $this->isStart= false;
-    //         echo "<p>Le" .$this->label. " n'est pas crédité de X euros</p>";
-    //     }
-    // }
+    public function credit(){
+        if($this->crediter){
+            $this->crediter = true;
+            echo "<p>Le " . $this->getLabel() . " de " .$this->getInfos() . " est crédité de: X euros</p>"; 
+        }else{
+            $this->crediter = false;
+            echo "<p>Le  " . $this->getLabel() ." de " .$this->getInfos() . " n'est pas crédité</p>"; 
+        }
+    
+    }
+    public function debit(){
+        if($this->debiter){
+            $this->debiter = true;
+            echo "<p>Le " . $this->getLabel() . " de " .$this->getInfos() . " est débité de: X euros</p>"; 
+        }else{
+            $this->debiter = false;
+            echo "<p>Le  " . $this->getLabel() ." de " .$this->getInfos() . " n'est pas débité</p>"; 
+        }
 
-    // public function debiter(){
-        
-    // }
+    }
+    public function virement(){
+        if($this->virer){
+            $this->virer = true;
+            echo "<p>Un virement du " . $this->getLabel() . " de " .$this->getInfos() . " a été effectué"; 
+        }else{
+            $this->virer = false;
+            echo "<p>Un virement du " . $this->getLabel() ." de " .$this->getInfos() . " n'a pas été effectué</p>"; 
+        }
 
-    // public function virer(){
-        
-    // }
-
+    }
 
 }
 
 $compte1 = new Compte("Compte Courant",200,"euros","NEMAR Jean");
-?>
 
-
-<?php
+//////////////////////////CREER LA CLASSE LIVRET A DEPENDANTE DE LA CLASSE COMPTE ET CREER UN OBJET ISSU DE LA CLASS LIVRET A////////////////
 
  class LivretA extends Compte{
    
      public function __construct($label, $soldeInit, $devise, $titulaire){
         parent::__construct($label, $soldeInit, $devise, $titulaire);
         }
-
-//     public function fetch(){
-//         echo ": "
-//         echo "<br>";
-
-     //}
 }
 
 $compte2 = new LivretA("LivretA",100,"euros","NEMAR Jean");
-?>
 
+////////////////////////////////////////////////////////////////AFFICHER LES INFORMATIONS/////////////////////////////////////////////
+?>
 
 <div  style="display: flex; flex-direction: row; justify-content: flex-start; align-items: center; text-align: left; gap: 20px; font-size:0.7em;">
     <div  style="display: flex; flex-direction: column; justify-content: left; align-items: left; text-align: left;">
@@ -162,8 +169,8 @@ $compte2 = new LivretA("LivretA",100,"euros","NEMAR Jean");
         echo $compte1;
         echo "<br>";
         echo $compte2;
-
         ?>
+
     </div>
     <div  style="display: flex; flex-direction: column; justify-content: flex-start; align-items: left; text-align: left;">
 
@@ -176,6 +183,7 @@ $compte2 = new LivretA("LivretA",100,"euros","NEMAR Jean");
         echo "<br>";
         echo "Solde: " . $compte1->getSolde() . " euros"; 
         ?>
+
     </div>
     <div  style="display: flex; flex-direction: column; justify-content: flex-start; align-items: left; text-align: left;">
 
@@ -188,9 +196,17 @@ $compte2 = new LivretA("LivretA",100,"euros","NEMAR Jean");
         echo "<br>";
         echo "Solde: " . $compte2->getSolde() . "euros";
         ?>
+
     </div>
 
 </div>
 
-<h3>Opérations et Virements</h3>
+<!-- ///////////////////////////////////////////////////////AFFICHER LES OPERATIONS/////////////////////////////////////////////////// -->
 
+<h4>Opérations et Virements</h4>
+
+        <?php
+        echo $compte1->credit();
+        echo $compte1->debit();
+        echo $compte1->virement();
+        ?>

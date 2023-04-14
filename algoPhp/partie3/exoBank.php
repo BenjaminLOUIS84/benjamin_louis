@@ -208,5 +208,8 @@ $compte2 = new LivretA("LivretA",100,"euros","NEMAR Jean");
         <?php
         echo $compte1->credit();
         echo $compte1->debit();
+        echo $compte2->credit();
+        echo $compte2->debit();
         echo $compte1->virement();
+        echo $compte2->virement();
         ?>

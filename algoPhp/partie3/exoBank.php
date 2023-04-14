@@ -77,17 +77,20 @@ class Compte {
 
     private string $label;
     private int $soldeInit;
+    private int $montant;
     private string $devise;
     private string $titulaire;
     private bool $crediter;
     private bool $debiter;
     private bool $virer;
     
+    
 
-    public function __construct($label, $soldeInit, $devise, $titulaire, 
+    public function __construct($label, $soldeInit, $montant, $devise, $titulaire, 
         $crediter=true, $debiter= true, $virer=true){
         $this->label = $label;
         $this->soldeInit = $soldeInit;
+        $this->montant = $montant;
         $this->devise = $devise;
         $this->titulaire = $titulaire;
         $this->crediter = $crediter;
@@ -97,7 +100,8 @@ class Compte {
 
     public function __toString(){
         return "Le ".$this->label." de ".$this->titulaire." présente un solde de " 
-        .$this->soldeInit." ".$this->devise. "<br>";
+        .$this->soldeInit." ".$this->devise. " et dispose de " 
+        .$this->montant." ".$this->devise. " pour effectuer une opération<br>";
     }
 
     public function getLabel(){
@@ -111,11 +115,18 @@ class Compte {
     public function getSolde(){
         return $this->soldeInit;
     }
+    
+    public function getMontant(){
+        return $this->montant;
+    }
 
+    
     public function credit(){
         if($this->crediter){
             $this->crediter = true;
-            echo "<p>Le " . $this->getLabel() . " de " .$this->getInfos() . " est crédité de: X euros</p>"; 
+            echo "<p>Si le " . $this->getLabel() . " de " .$this->getInfos() . " est crédité de: " 
+            .$this->getMontant(). " " .$this->devise." alors le solde de ce compte sera de: "
+            .$this->getSolde(). " + 50 euros soit 250 euros</p>"; 
         }else{
             $this->crediter = false;
             echo "<p>Le  " . $this->getLabel() ." de " .$this->getInfos() . " n'est pas crédité</p>"; 
@@ -125,7 +136,9 @@ class Compte {
     public function debit(){
         if($this->debiter){
             $this->debiter = true;
-            echo "<p>Le " . $this->getLabel() . " de " .$this->getInfos() . " est débité de: X euros</p>"; 
+            echo "<p>Si le " . $this->getLabel() . " de " .$this->getInfos() . " est débité de: " 
+            .$this->getMontant(). " " .$this->devise." alors le solde de ce compte sera de: "
+            .$this->getSolde(). " - 50 euros soit 150 euros</p>"; 
         }else{
             $this->debiter = false;
             echo "<p>Le  " . $this->getLabel() ." de " .$this->getInfos() . " n'est pas débité</p>"; 
@@ -135,28 +148,29 @@ class Compte {
     public function virement(){
         if($this->virer){
             $this->virer = true;
-            echo "<p>Un virement du " . $this->getLabel() . " de " .$this->getInfos() . " a été effectué"; 
+            echo "<p>Si un virement de " .$this->getMontant(). " " .$this->devise. " du " . $this->getLabel() . " de " .$this->getInfos() . " est effectué
+            alors le solde du Livret A sera de " .$this->getSolde(). " " .$this->devise. "</p>"; 
         }else{
             $this->virer = false;
-            echo "<p>Un virement du " . $this->getLabel() ." de " .$this->getInfos() . " n'a pas été effectué</p>"; 
+            echo "<p>Le virement du " . $this->getLabel() ." de " .$this->getInfos() . " n'a pas été effectué</p>"; 
         }
 
     }
 
 }
 
-$compte1 = new Compte("Compte Courant",200,"euros","NEMAR Jean");
+$compte1 = new Compte("Compte Courant",200,50,"euros","NEMAR Jean");
 
 //////////////////////////CREER LA CLASSE LIVRET A DEPENDANTE DE LA CLASSE COMPTE ET CREER UN OBJET ISSU DE LA CLASS LIVRET A////////////////
 
  class LivretA extends Compte{
    
-     public function __construct($label, $soldeInit, $devise, $titulaire){
-        parent::__construct($label, $soldeInit, $devise, $titulaire);
+     public function __construct($label, $soldeInit, $montant, $devise, $titulaire){
+        parent::__construct($label, $soldeInit, $montant, $devise, $titulaire);
         }
 }
 
-$compte2 = new LivretA("LivretA",100,"euros","NEMAR Jean");
+$compte2 = new LivretA("Livret A",100,50,"euros","NEMAR Jean");
 
 ////////////////////////////////////////////////////////////////AFFICHER LES INFORMATIONS/////////////////////////////////////////////
 ?>
@@ -194,7 +208,7 @@ $compte2 = new LivretA("LivretA",100,"euros","NEMAR Jean");
         echo "<br>";
         echo "Titulaire: " . $compte2->getInfos();
         echo "<br>";
-        echo "Solde: " . $compte2->getSolde() . "euros";
+        echo "Solde: " . $compte2->getSolde() . " euros";
         ?>
 
     </div>

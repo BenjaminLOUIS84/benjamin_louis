@@ -6,7 +6,7 @@ class Titulaire{
     private string $prenom;
     private DateTime $date;
     private string $ville;
-    
+
     private array $comptes; //Tableau vide qui contient le ou les comptes
     private array $livrets;
 
@@ -49,6 +49,9 @@ class Titulaire{
 }
 $personne1 = new Titulaire("NEMAR", "Jean", "1980-02-19", "Colmar","Compte Courant","Livret A");
 echo $personne1;
+echo"<br>";
+$personne2 = new Titulaire("MENTATION", "Ali", "1970-03-10", "Noves","Compte Courant","Livret A");
+echo $personne2;
 echo"<br>";
 
 ?>

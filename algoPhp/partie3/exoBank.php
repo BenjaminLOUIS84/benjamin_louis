@@ -120,13 +120,22 @@ class Compte {
         return $this->montant;
     }
 
+    public function calculerCredit(){
+        return $this->soldeInit + $this->montant;
+    }
+
+    public function calculerDebit(){
+        return $this->soldeInit - $this->montant;
+    }
+    
+
     
     public function credit(){
         if($this->crediter){
             $this->crediter = true;
             echo "<p>Si le " . $this->getLabel() . " de " .$this->getInfos() . " est crédité de: " 
             .$this->getMontant(). " " .$this->devise." alors le solde de ce compte sera de: "
-            .$this->getSolde(). " + 50 euros soit 250 euros</p>"; 
+            .$this->calculerCredit(). " " .$this->devise.  "</p>"; 
         }else{
             $this->crediter = false;
             echo "<p>Le  " . $this->getLabel() ." de " .$this->getInfos() . " n'est pas crédité</p>"; 
@@ -138,7 +147,7 @@ class Compte {
             $this->debiter = true;
             echo "<p>Si le " . $this->getLabel() . " de " .$this->getInfos() . " est débité de: " 
             .$this->getMontant(). " " .$this->devise." alors le solde de ce compte sera de: "
-            .$this->getSolde(). " - 50 euros soit 150 euros</p>"; 
+            .$this->calculerDebit(). " " .$this->devise.  "</p>";
         }else{
             $this->debiter = false;
             echo "<p>Le  " . $this->getLabel() ." de " .$this->getInfos() . " n'est pas débité</p>"; 
@@ -148,8 +157,8 @@ class Compte {
     public function virement(){
         if($this->virer){
             $this->virer = true;
-            echo "<p>Si un virement de " .$this->getMontant(). " " .$this->devise. " du " . $this->getLabel() . " de " .$this->getInfos() . " est effectué
-            alors le solde du Livret A sera de " .$this->getSolde(). " " .$this->devise. "</p>"; 
+            echo "<p>Si un virement de " .$this->getMontant(). " " .$this->devise. " du " . $this->getLabel() . " de " 
+            .$this->getInfos() . " est effectué alors le solde du " .$this->getLabel(). " sera de " .$this->calculerDebit(). " " .$this->devise. "</p>"; 
         }else{
             $this->virer = false;
             echo "<p>Le virement du " . $this->getLabel() ." de " .$this->getInfos() . " n'a pas été effectué</p>"; 

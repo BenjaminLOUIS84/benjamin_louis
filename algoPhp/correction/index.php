@@ -30,8 +30,8 @@ Une ville<br>
 L'ensemble de ses comptes bancaires.<br>
 <br>
 Sur un compte bancaire, on doit pouvoir :<br>
-Créditer le compte de X euros<br>
-Débiter le compte de X euros<br>
+Créditer le compte de 50 euros<br>
+Débiter le compte de 50 euros<br>
 Effectuer un virement d'un compte à l'autre.<br>
 <br>
 On doit pouvoir :<br>
@@ -65,15 +65,14 @@ $compte4 = new CompteBancaire("Livret A",100,50,"euros",$personne2);
 ?>
 <div  style="display: flex; flex-direction: row; justify-content: flex-start; align-items: center; text-align: left; gap: 20px; font-size:0.7em;">
     <div  style="display: flex; flex-direction: column; justify-content: left; align-items: left; text-align: left;">
-
         <?php
         echo "<br>";
        // echo $compte1;
         echo "<br>";
         //echo $compte2;
         ?>
-
     </div>
+
     <div  style="display: flex; flex-direction: column; justify-content: flex-start; align-items: left; text-align: left;">
 
         <?php

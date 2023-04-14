@@ -58,7 +58,6 @@ class Titulaire {
     
         $difference = date_diff($dateNaissance, $now);
         return $difference->y;
-
     }
 
     public function __toString(){
@@ -84,8 +83,6 @@ class Compte {
     private bool $debiter;
     private bool $virer;
     
-    
-
     public function __construct($label, $soldeInit, $montant, $devise, $titulaire, 
         $crediter=true, $debiter= true, $virer=true){
         $this->label = $label;
@@ -145,8 +142,8 @@ class Compte {
             $this->crediter = false;
             echo "<p>Le  " . $this->getLabel() ." de " .$this->getInfos() . " n'est pas crédité</p>"; 
         }
-    
     }
+
     public function debit(){
         if($this->debiter){
             $this->debiter = true;
@@ -157,8 +154,8 @@ class Compte {
             $this->debiter = false;
             echo "<p>Le  " . $this->getLabel() ." de " .$this->getInfos() . " n'est pas débité</p>"; 
         }
-
     }
+
     public function virement(){
         if($this->virer){
             $this->virer = true;
@@ -168,7 +165,6 @@ class Compte {
             $this->virer = false;
             echo "<p>Le virement du " . $this->getLabel() ." de " .$this->getInfos() . " n'a pas été effectué</p>"; 
         }
-
     }
 
 }

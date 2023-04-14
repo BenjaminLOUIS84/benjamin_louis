@@ -97,12 +97,15 @@ class Compte {
         $this->debiter = $debiter;
         $this->virer = $virer;
     }
+////////////////////////////////////////////////Pour convertir les propriétés numériques en chaîne de caractère//////////////////////////////
 
     public function __toString(){
         return "Le ".$this->label." de ".$this->titulaire." présente un solde de " 
         .$this->soldeInit." ".$this->devise. " et dispose de " 
         .$this->montant." ".$this->devise. " pour effectuer une opération<br>";
     }
+    
+////////////////////////////////////////////////Matérialiser les données pour utiliser celles-ci///////////////////////////////////////////////
 
     public function getLabel(){
         return $this->label;
@@ -120,6 +123,8 @@ class Compte {
         return $this->montant;
     }
 
+////////////////////////////////////////////////Matérialiser les calculs pour faire les opérations//////////////////////////////
+
     public function calculerCredit(){
         return $this->soldeInit + $this->montant;
     }
@@ -127,9 +132,9 @@ class Compte {
     public function calculerDebit(){
         return $this->soldeInit - $this->montant;
     }
-    
 
-    
+/////////////////////////////////////////////////Méthodes pour matérialiser les opérations//////////////////////////////////////
+
     public function credit(){
         if($this->crediter){
             $this->crediter = true;
@@ -167,6 +172,8 @@ class Compte {
     }
 
 }
+
+///////////////////////////////////////////////////////////////////////Créer l'objet de cette classe///////////////////////////////////////////
 
 $compte1 = new Compte("Compte Courant",200,50,"euros","NEMAR Jean");
 

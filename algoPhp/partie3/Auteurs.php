@@ -22,11 +22,25 @@ class Auteur{
   }
 
   public function __toString(){
-    return "Les Livres de " .$this->firstname." ".$this->name."<br>";
+    return $this->firstname." ".$this->name."<br>";
+  }
+///////////////////////////////////////////////////////Méthode pour afficher tous les livres//////////////////////////////////////////
+  
+public function afficherLivres($bibliography){
+    $result = "<h2>L'ensemble des ouvrages de " .$this->firstname. " " .$this->name. "</h2>";
+    foreach($this->bibliography as $bibliography){
+      $result = $bibliography->getAllBooks()."<br>";
+    }
+    return $result;
   }
 
-  
-
+  //  public function afficherLivres($bibliography){
+  //    echo "<form>";
+  //       foreach ($bibliography as $value) {
+  //            echo "<label>".$value."</label>"."<br>"; 
+  //        } 
+  //    echo "</form>";  
+  //   }
 }
 
 ?>

@@ -64,15 +64,6 @@ $compte4 = new CompteBancaire("Compte courant 4",100,50,"euros",$personne2);
 
 ?>
 <div  style="display: flex; flex-direction: row; justify-content: flex-start; align-items: center; text-align: left; gap: 20px; font-size:0.7em;">
-    <div  style="display: flex; flex-direction: column; justify-content: left; align-items: left; text-align: left;">
-        <?php
-        echo "<br>";
-       // echo $compte1;
-        echo "<br>";
-        //echo $compte2;
-        ?>
-    </div>
-
     <div  style="display: flex; flex-direction: column; justify-content: flex-start; align-items: left; text-align: left;">
 
         <?php
@@ -131,15 +122,10 @@ $compte4 = new CompteBancaire("Compte courant 4",100,50,"euros",$personne2);
 <h4>Opérations et Virements</h4>
 
         <?php
-          echo $compte1->crediter(50);
-    //     echo $compte1->debit();
-    //     //echo $compte2->credit();
-    //     //echo $compte2->debit();
-    //     echo $compte1->virement();
-    //    // echo $compte2->virement();
+        echo $compte1->crediter(50);
+        echo $compte2->debiter(100);
+        //   echo $compte1->virement($compte2, 500);
         ?>
-
-
 </body>
 
 </html>

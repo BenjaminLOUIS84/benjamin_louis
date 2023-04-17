@@ -11,12 +11,11 @@ private string $gender;
 private string $resume;
 
 private Director $director;
-private Star $star;
+//private Star $star;
 
 ////////////////////////////////////////////Constructor///////////////////////////////////////////
 
-public function __construct(string $title, int $date, int $duration,
-                            string $gender, string $resume, Director $director, Star $star){
+public function __construct(string $title, int $date, int $duration, string $gender, string $resume, $director){
 
 $this->title = $title;
 $this->date = $date;
@@ -24,10 +23,10 @@ $this->duration = $duration;
 $this->gender = $gender;
 $this->resume = $resume;
 $this->director = $director;
-$this->star = $star;
+//$this->star = $star;
 
 $director->addDirector($this);
-$star->addStar($this);
+//$star->addStar($this);
 }
 
 ////////////////////////////////////////////Getters///////////////////////////////////////////
@@ -50,9 +49,9 @@ public function getResume(){
 public function getDirector(){
         return $this->director;
 }
-public function getStar(){
-        return $this->star;
-}  
+// public function getStar(){
+//         return $this->star;
+// }  
 
 ////////////////////////////////////////////Setters///////////////////////////////////////////
 
@@ -74,20 +73,28 @@ public function setResume(string $resume){
 public function setDirector(string $director){
     $this->director = $director;
 }
-public function setStar(string $star){
-    $this->star = $star;
-}
+// public function setStar(string $star){
+//     $this->star = $star;
+// }
 
 ////////////////////////////////////////////Methods///////////////////////////////////////////
 
+public function getAllMovies(){
+    return $this->title. " produit en " .$this->date. "par" .$this->director. "<br>
+    Durée :" .$this->duration." minutes<br>
+    Genre :" .$this->gender. "<br>
+    Distribution :" .$this->star. "<br>
+    Synopsis : " .$this->resume. "<br>";
+  }
+ 
+  public function __tostring(){ // Retourne toutes les infos d'un film.
 
-
-
-
-
-
+    return $this->getTitle();
+    
+} 
 
 }
+
 ?>
 
 

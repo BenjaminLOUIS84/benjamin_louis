@@ -38,13 +38,24 @@ Lister la filmographie d'un réalisateur (quels sont les films qu'a réalisé ce
 
 include "Movie.php";
 include "Director.php";
-include "Star.php";
+//include "Star.php";
 
-// instance stars
 // instance movies
+
+$movie1 = new Movie("STARWARS",1977,120,"Science-fiction","Résumé",$director1);
+
 // instance directors
 
+$director1 = new Director("George","LUCAS","Masculin",1944);
 
+echo "<br>";
+//echo $director1;
+echo "<br>";
+
+// instance stars
+
+echo $director1->displayFilmography();
+echo"<br>";
 
 ?>
 

@@ -29,35 +29,23 @@ class CompteBancaire {
     }
 
 
-
     public function crediter($montant){ // Methode permettant de créditer le compte
         $this->solde += $montant;
-        return "Votre solde est désormais de " .$this->solde. " " .$this->devise. "<br>";
+        echo "Votre solde est désormais de " .$this->solde. " " .$this->devise. "<br>";
         }
     
     public function debiter($montant){ // Methode permettant de débiter le compte. 
-         $this->solde -= $montant;
-         return "Votre solde est désormais de " .$this->solde. " " .$this->devise. "<br>";
+        $this->solde -= $montant;
+        echo "Votre solde est désormais de " .$this->solde. " " .$this->devise. "<br>";
         }
     
+     public function virement(CompteBancaire $compteCible, $montant){ // Fonction virement depuis le compte actuel vers un compte cible.
+         $this->debiter($montant); // On débite de la valeur demandée le compte actuel.
+         echo "Virement de ".$montant $this->devise. "effectué<br>";
+         $compteCible->crediter($montant); // On crédite le compte cible.            
+        } 
     
-    public function virement(CompteBancaire $compteCible, float $montant){ // Fonction virement depuis le compte actuel vers un compte cible.
 
-            if (($this->getSolde() - $montant) < 0) { // Si le solde du compte actuel le permet, alors on effectue le virement.
-    
-                return "Solde insuffisant pour effectuer ce virement. <br>";
-    
-            } else {
-    
-                $this->debiter($montant); // On débite de la valeur demandée le compte actuel.
-    
-                return "Virement de " .$montant $this->devise.  "effectué<br>";
-    
-                $compteCible->crediter($montant); // On crédite le compte cible.            
-    
-            }       
-           
-        }      
     
     //getter-setter
     public function getLabel(){

@@ -8,7 +8,7 @@ class Auteur{
   private array $bibliography;//Tableau vide qui contiendra les livres de l'auteur
 
   //constructeur
-  public function __construct($name, $firstname){
+  public function __construct(string $name, string $firstname){
     $this->name = $name;
     $this->firstname = $firstname;
 
@@ -16,7 +16,7 @@ class Auteur{
   }
 
   //methodes
-  public function ajouterBibliographie(Livres $bibliography) {
+  public function ajouterBibliographie(Livre $bibliography) {
   $this->bibliography[] = $bibliography;
   // Equivalent à : array_push($this->bibliography, $bibliography);
   }

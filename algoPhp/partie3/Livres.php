@@ -16,21 +16,57 @@ class Livre {
     $this->pages = $pages;
     $this->year = $year;
     $this->price = $price;
-    
     $this->auteur = $auteur; //L'auteur est initialisé
-      $auteur->ajouterBibliographie($this); //Fournir toute l'instance en cours de CompteBancaire
+
+    $auteur->ajouterBibliographie($this); //Fournir toute l'instance en cours de CompteBancaire
+  }
+ // GETTERS 
+
+ public function getTitle(){
+  return $this->title;
+  }
+  public function getNbPages(){
+  return $this->pages;
+  }
+  public function getDate(){
+  return $this->year;
+  }
+  public function getPrice(){
+  return $this->price;
+  }
+  public function getAuthor(){
+  return $this->auteur;
+  }
+
+// SETTERS
+
+  public function setTitle(string $title){
+  $this->title = $title;
+  }
+  public function setNbPages(int $pages){
+  $this->pages = $pages;
+  }
+  public function setDate(int $year){
+  $this->year = $year;
+  }
+  public function setPrice($price){
+  $this->price = $price;
+  }
+  public function setAuthor(Auteur $auteur){
+  $this->auteur = $auteur;
   }
 
   //méthodes
-  public function __toString(){
-    return "Le livre " .$this->title." de " .$this->auteur. 
-    " publié en ".$this->pages." contient ".$this->year." pages
+  public function getAllBook(){
+    return $this->title. " publié en ".$this->pages." contient ".$this->year." pages
     et coûte : ".$this->price. "€<br>";
   }
  
-  public function getAllBooks(){
-    return $this->bibliography;
-}
+  public function __tostring(){ // Retourne toutes les infos d'un livre dont l'auteur.
+
+    return $this->getTitle();
+    
+}        
 
 }
 

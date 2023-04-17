@@ -11,36 +11,53 @@ class Auteur{
   public function __construct(string $name, string $firstname){
     $this->name = $name;
     $this->firstname = $firstname;
-
     $this->bibliography = [];
   }
 
+  //getter
+
+  public function getFirstname(){
+    return $this->firstname;
+  }
+
+  public function getName(){
+    return $this->name;
+  }
+
+  //setter
+
+  public function setFirstname($newFirstname){
+    $this->firstname = $newFirstname;
+  }
+
+  public function setName($newNname){
+    $this->lastname = $newName;            
+  }
+
   //methodes
-  public function ajouterBibliographie(Livre $bibliography) {
-  $this->bibliography[] = $bibliography;
+  public function ajouterBibliographie(Livre $book) {
+  $this->bibliography[] = $book;
   // Equivalent à : array_push($this->bibliography, $bibliography);
   }
 
-  public function __toString(){
-    return $this->firstname." ".$this->name."<br>";
-  }
+  
 ///////////////////////////////////////////////////////Méthode pour afficher tous les livres//////////////////////////////////////////
   
-public function afficherLivres($bibliography){
-    $result = "<h2>L'ensemble des ouvrages de " .$this->firstname. " " .$this->name. "</h2>";
-    foreach($this->bibliography as $bibliography){
-      $result = $bibliography->getAllBooks()."<br>";
+  public function  afficherBibliographie(){
+
+    $bibliography = "Livres de " .$this->firstname. " " .$this->name. " :<br>";
+
+  foreach ($this->bibliography as $book){
+
+      $bibliography = $bibliography. $book->getAllBook();               
     }
-    return $result;
+
+    return $bibliography;  
   }
 
-  //  public function afficherLivres($bibliography){
-  //    echo "<form>";
-  //       foreach ($bibliography as $value) {
-  //            echo "<label>".$value."</label>"."<br>"; 
-  //        } 
-  //    echo "</form>";  
-  //   }
-}
+  public function __toString(){
+    return $this->getFirstname()." ".$this->getName()."<br>";
+  }
 
+}
 ?>

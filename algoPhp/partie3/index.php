@@ -30,11 +30,29 @@ include "Livres.php";
 // instancier un auteur
 
 $auteur1 = new Auteur("KING", "Stéphen");
+
+echo"<br>";
 echo $auteur1;
 echo"<br>";
+
 // instancier les livres de l'auteur
-$livres1 = new Livres("Ca", 1986, 1138, 20, $auteur1);
+
+$livres1 = new Livre("Ca", 1986, 1138, 20, $auteur1);
+$livres2 = new Livre("Simetierre", 1983, 374, 15, $auteur1);
+$livres3 = new Livre("Le Fléau", 1978, 823, 14, $auteur1);
+$livres4 = new Livre("Shining", 1977, 447, 16, $auteur1);
+
+echo"<br>";
 echo $livres1;
+echo "<br>";
+echo"<br>";
+echo $livres2;
+echo "<br>";
+echo"<br>";
+echo $livres3;
+echo "<br>";
+echo"<br>";
+echo $livres4;
 echo "<br>";
 
 ?>

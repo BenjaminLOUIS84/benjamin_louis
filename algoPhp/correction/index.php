@@ -124,7 +124,7 @@ $compte4 = new CompteBancaire("Compte courant 4",100,50,"euros",$personne2);
         <?php
         echo $compte1->crediter(50);
         echo $compte2->debiter(100);
-        //   echo $compte1->virement($compte2, 500);
+        echo $compte1->virement($compte2, 500);
         ?>
 </body>
 

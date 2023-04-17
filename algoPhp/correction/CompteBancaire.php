@@ -40,8 +40,11 @@ class CompteBancaire {
         }
     
      public function virement(CompteBancaire $compteCible, $montant){ // Fonction virement depuis le compte actuel vers un compte cible.
+
          $this->debiter($montant); // On débite de la valeur demandée le compte actuel.
-         echo "Virement de ".$montant $this->devise. "effectué<br>";
+
+         echo "Virement de ".$montant." ".$this->devise. "<br>";
+
          $compteCible->crediter($montant); // On crédite le compte cible.            
         } 
     

@@ -55,6 +55,9 @@ echo"<br>";
 echo $livres4;
 echo "<br>";
 
+echo afficherLivres();
+
+
 ?>
 
 </body>

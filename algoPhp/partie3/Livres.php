@@ -28,6 +28,14 @@ class Livre {
     et coûte : ".$this->price. "€<br>";
   }
  
+  public function afficherLivres($bibliography){
+    $result = "<h2>L'ensemble des ouvrages de " .$this->firstname. " " .$this->name. "</h2>";
+    foreach($this->bibliography as $bibliography){
+      $result = $bibliography->getTypeofbooks()."<br>";
+    }
+    return $result;
+  }
+
 }
 
 ?>

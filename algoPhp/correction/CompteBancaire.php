@@ -29,6 +29,9 @@ class CompteBancaire {
     }
 
 
+    
+
+
     public function crediter($montant){ // Methode permettant de créditer le compte
         $this->solde += $montant;
         echo "Votre solde est désormais de " .$this->solde. " " .$this->devise. "<br>";
@@ -48,7 +51,6 @@ class CompteBancaire {
          $compteCible->crediter($montant); // On crédite le compte cible.            
         } 
     
-
     
     //getter-setter
     public function getLabel(){

@@ -44,41 +44,43 @@ class CompteBancaire {
         return $this->solde - $this->montant;
     }
 
-    // public function credit(){
-    //     if($this->crediter){
-    //         $this->crediter = true;
-    //         echo "<p>Si le " . $this->getLabel() .  " est crédité de: " 
-    //         .$this->getMontant(). " " .$this->devise." alors le solde de ce compte sera de: "
-    //         .$this->calculerCredit(). " " .$this->devise.  "</p>"; 
-    //     }else{
-    //         $this->crediter = false;
-    //         echo "<p>Le  " . $this->getLabel() . " n'est pas crédité</p>"; 
-    //     }
+    public function credit(){
+        if($this->montant){
+            $this->montant = true;
+            
+            echo "<p>Si le " . $this->getLabel() .  " est crédité de: " 
+            .$this->getMontant(). " " .$this->devise." alors le solde de ce compte sera de: "
+            .$this->calculerCredit(). " " .$this->devise.  "</p>"; 
+        }else{
+            $this->montant = false;
+            echo "<p>Le  " . $this->getLabel() . " n'est pas crédité</p>"; 
+        }
     
-    // }
-    // public function debit(){
-    //     if($this->debiter){
-    //         $this->debiter = true;
-    //         echo "<p>Si le " . $this->getLabel() . "  est débité de: " 
-    //         .$this->getMontant(). " " .$this->devise." alors le solde de ce compte sera de: "
-    //         .$this->calculerDebit(). " " .$this->devise.  "</p>";
-    //     }else{
-    //         $this->debiter = false;
-    //         echo "<p>Le  " . $this->getLabel() . " n'est pas débité</p>"; 
-    //     }
+    }
 
-    // }
-    // public function virement(){
-    //     if($this->virer){
-    //         $this->virer = true;
-    //         echo "<p>Si un virement de " .$this->getMontant(). " " .$this->devise. " du " . $this->getLabel() .  
-    //          " est effectué alors le solde du " .$this->getLabel(). " sera de " .$this->calculerDebit(). " " .$this->devise. "</p>"; 
-    //     }else{
-    //         $this->virer = false;
-    //         echo "<p>Le virement du " . $this->getLabel() . " n'a pas été effectué</p>"; 
-    //     }
+    public function debit(){
+        if($this->montant){
+            $this->montant = true;
+            echo "<p>Si le " . $this->getLabel() . "  est débité de: " 
+            .$this->getMontant(). " " .$this->devise." alors le solde de ce compte sera de: "
+            .$this->calculerDebit(). " " .$this->devise.  "</p>";
+        }else{
+            $this->montant = false;
+            echo "<p>Le  " . $this->getLabel() . " n'est pas débité</p>"; 
+        }
 
-    // }
+    }
+    public function virement(){
+        if($this->virer){
+            $this->virer = true;
+            echo "<p>Si un virement de " .$this->getMontant(). " " .$this->devise. " du " . $this->getLabel() .  
+             " est effectué alors le solde du " .$this->getLabel(). " sera de " .$this->calculerDebit(). " " .$this->devise. "</p>"; 
+        }else{
+            $this->virer = false;
+            echo "<p>Le virement du " . $this->getLabel() . " n'a pas été effectué</p>"; 
+        }
+
+    }
     
     //getter-setter
     public function getLabel(){

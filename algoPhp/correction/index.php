@@ -71,7 +71,7 @@ $compte4 = new CompteBancaire("Compte courant 4",100,50,"euros",$personne2);
         echo "<br>";
         echo "*********************************";
         echo "<br>";
-        echo "Titualire: " . $compte1->getInfos();
+        //echo "Titualire: " . $compte1->getNom(). $compte1->getPrenom();
         echo "<br>";
         echo "Solde: " . $compte1->getSolde() . " euros";
         echo "<br>";
@@ -81,7 +81,7 @@ $compte4 = new CompteBancaire("Compte courant 4",100,50,"euros",$personne2);
         echo "<br>";
         echo "*********************************";
         echo "<br>";
-        echo "Titualire: " . $compte3->getInfos();
+       // echo "Titualire: " . $compte3->getNom() . $compte3->getPrenom();
         echo "<br>";
         echo "Solde: " . $compte3->getSolde() . " euros";
         echo "<br>";
@@ -96,7 +96,7 @@ $compte4 = new CompteBancaire("Compte courant 4",100,50,"euros",$personne2);
         echo "<br>";
         echo "*********************************";
         echo "<br>";
-        echo "Titulaire: " . $compte2->getInfos();
+       // echo "Titulaire: " . $compte2->getNom() . $compte2->getPrenom();
         echo "<br>";
         echo "Solde: " . $compte2->getSolde() . " euros";
         echo "<br>";
@@ -106,7 +106,7 @@ $compte4 = new CompteBancaire("Compte courant 4",100,50,"euros",$personne2);
         echo "<br>";
         echo "*********************************";
         echo "<br>";
-        echo "Titualire: " . $compte4->getInfos();
+       // echo "Titualire: " . $compte4->getNom() . $compte4->getPrenom();
         echo "<br>";
         echo "Solde: " . $compte4->getSolde() . " euros";
         echo "<br>";
@@ -125,7 +125,15 @@ $compte4 = new CompteBancaire("Compte courant 4",100,50,"euros",$personne2);
         echo $compte1->crediter(50);
         echo $compte2->debiter(100);
         echo $compte1->virement($compte2, 500);
-        ?>
+        echo "<br>";
+        echo "-------------------------------------------------";
+//////////////////////////////////////////////////Afficher l'ensemble des comptes/////////////////////////////////////////
+        echo $personne1->afficherCompte();
+        echo "<br>";
+        echo $personne2->afficherCompte();
+        echo "<br>";
+
+    ?>
 </body>
 
 </html>

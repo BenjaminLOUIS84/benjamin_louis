@@ -6,11 +6,11 @@
     <meta charset="utf-8">  <link rel="stylesheet" href="style.css">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EXERCICE LIVRE</title>
+    <title>EXERCICE CINEMA</title>
 </head>
 
 <body>
-<h1>Exercice LIVRE</h1>
+<h1>Exercice CINEMA</h1>
 <p>Vous êtes chargé(e) de créer un projet orienté objet permettant de gérer des livres et leurs auteurs respectifs.<br>
 Les livres sont caractérisés par un titre, un nombre de pages, une année de parution, un prix et un auteur.<br>
 Un auteur comporte un nom et un prénom.Une méthode toString() sera appréciée dans chacune de vos classes.<br>
@@ -45,6 +45,7 @@ $livres4 = new Livre("Shining", 1977, 447, 16, $auteur1);
 
 echo $auteur1->afficherBibliographie();
 echo"<br>";
+
 
 ?>
 

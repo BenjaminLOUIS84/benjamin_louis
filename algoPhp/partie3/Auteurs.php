@@ -25,6 +25,8 @@ class Auteur{
     return "Les Livres de " .$this->firstname." ".$this->name."<br>";
   }
 
+  
+
 }
 
 ?>

@@ -31,7 +31,7 @@ L'ensemble de ses comptes bancaires.<br>
 <br>
 Sur un compte bancaire, on doit pouvoir :<br>
 Créditer le compte de 50 euros<br>
-Débiter le compte de 50 euros<br>
+Débiter le compte de 100 euros<br>
 Effectuer un virement d'un compte à l'autre.<br>
 <br>
 On doit pouvoir :<br>
@@ -54,10 +54,10 @@ echo $personne2;
 echo"<br>";
 
 // instancier au moins 2 comptes par titulaire
-$compte1 = new CompteBancaire("Compte Courant",200,50,"euros", $personne1);
-$compte2 = new CompteBancaire("Livret A",100,50,"euros",$personne1);
-$compte3 = new CompteBancaire("Compte Courant",200,50,"euros", $personne2);
-$compte4 = new CompteBancaire("Livret A",100,50,"euros",$personne2);
+$compte1 = new CompteBancaire("Compte Courant 1",200,50,"euros", $personne1);
+$compte2 = new CompteBancaire("Compte Courant 2",100,50,"euros",$personne1);
+$compte3 = new CompteBancaire("Compte Courant 3",200,50,"euros", $personne2);
+$compte4 = new CompteBancaire("Compte courant 4",100,50,"euros",$personne2);
 
 //utiliser les méthodes des 2 classes
 
@@ -131,12 +131,12 @@ $compte4 = new CompteBancaire("Livret A",100,50,"euros",$personne2);
 <h4>Opérations et Virements</h4>
 
         <?php
-        echo $compte1->credit();
-        echo $compte1->debit();
-        //echo $compte2->credit();
-        //echo $compte2->debit();
-        echo $compte1->virement();
-       // echo $compte2->virement();
+        //  echo $compte1->crediter(50);
+    //     echo $compte1->debit();
+    //     //echo $compte2->credit();
+    //     //echo $compte2->debit();
+    //     echo $compte1->virement();
+    //    // echo $compte2->virement();
         ?>
 
 

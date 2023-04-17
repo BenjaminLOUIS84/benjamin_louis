@@ -28,7 +28,14 @@ include "Auteurs.php";// importer les 2 classes
 include "Livres.php";
 
 // instancier un auteur
+
+$auteur1 = new Auteur("KING", "Stéphen");
+echo $auteur1;
+echo"<br>";
 // instancier les livres de l'auteur
+//$livres1 = new Livres("Ca", 1986, 1138, 20, $auteur1);
+//echo $livres1;
+echo "<br>";
 
 ?>
 

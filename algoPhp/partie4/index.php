@@ -34,30 +34,16 @@ Lister la filmographie d'un réalisateur (quels sont les films qu'a réalisé ce
 
 <?php
 
-//////////////////////////////////////////////////////Importer les classes////////////////////////////////////////////////
+//////////////////////////////////////////////////////Import class////////////////////////////////////////////////
 
-include "Film.php";
-include "Realisateur.php";
-include "Acteur.php";
+include "Movie.php";
+include "Director.php";
+include "Star.php";
 
-// instancier un auteur
+// instance stars
+// instance movies
+// instance directors
 
-// $auteur1 = new Auteur("KING", "Stéphen");
-
-// echo"<br>";
-// echo $auteur1;
-// echo"<br>";
-
-// instancier les livres de l'auteur
-
-// $livres1 = new Livre("Ca", 1986, 1138, 20, $auteur1);
-// $livres2 = new Livre("Simetierre", 1983, 374, 15, $auteur1);
-// $livres3 = new Livre("Le Fléau", 1978, 823, 14, $auteur1);
-// $livres4 = new Livre("Shining", 1977, 447, 16, $auteur1);
-
-
-// echo $auteur1->afficherBibliographie();
-// echo"<br>";
 
 
 ?>

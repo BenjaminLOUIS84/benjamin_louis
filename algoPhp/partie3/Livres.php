@@ -41,19 +41,19 @@ class Livre {
 // SETTERS
 
   public function setTitle(string $title){
-  $this->title = $title;
+    $this->title = $title;
   }
   public function setNbPages(int $pages){
-  $this->pages = $pages;
+    $this->pages = $pages;
   }
   public function setDate(int $year){
-  $this->year = $year;
+    $this->year = $year;
   }
   public function setPrice($price){
-  $this->price = $price;
+    $this->price = $price;
   }
   public function setAuthor(Auteur $auteur){
-  $this->auteur = $auteur;
+    $this->auteur = $auteur;
   }
 
   //méthodes

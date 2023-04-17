@@ -6,24 +6,16 @@ class CompteBancaire {
     private float $solde;
     private float $montant;
     private string $devise;
-    // private bool $crediter;
-    // private bool $debiter;
-    // private bool $virer;
 
     private Titulaire $titulaire; //Pour lier le Titulaire au Compte
     
     //constructeur
-    public function __construct($label, $solde, $montant, $devise, Titulaire $titulaire, 
-                                //$crediter=true, $debiter= true, $virer=true
-                                ){
+    public function __construct($label, $solde, $montant, $devise, Titulaire $titulaire){
 
         $this->label = $label;
         $this->solde = $solde;
-        $this->montant = $montant;
         $this->devise = $devise;
-        // $this->crediter = $crediter;
-        // $this->debiter = $debiter;
-        // $this->virer = $virer;
+    
 
         $this->titulaire = $titulaire; //Le Titulaire est initialisé
         $titulaire->ajouterCompte($this); //Fournir toute l'instance en cours de CompteBancaire
@@ -36,51 +28,36 @@ class CompteBancaire {
         .$this->montant." ".$this->devise. " pour effectuer une opération<br>";
     }
 
-    public function calculerCredit(){
-        return $this->solde + $this->montant;
-    }
 
-    public function calculerDebit(){
-        return $this->solde - $this->montant;
-    }
 
-    public function credit(){
-        if($this->montant){
-            $this->montant = true;
-            
-            echo "<p>Si le " . $this->getLabel() .  " est crédité de: " 
-            .$this->getMontant(). " " .$this->devise." alors le solde de ce compte sera de: "
-            .$this->calculerCredit(). " " .$this->devise.  "</p>"; 
-        }else{
-            $this->montant = false;
-            echo "<p>Le  " . $this->getLabel() . " n'est pas crédité</p>"; 
+    public function crediter($montant){ // Methode permettant de créditer le compte
+        $this->solde += $montant;
+        return "Votre solde est désormais de " .$this->solde. " " .$this->devise. "<br>";
         }
     
-    }
-
-    public function debit(){
-        if($this->montant){
-            $this->montant = true;
-            echo "<p>Si le " . $this->getLabel() . "  est débité de: " 
-            .$this->getMontant(). " " .$this->devise." alors le solde de ce compte sera de: "
-            .$this->calculerDebit(). " " .$this->devise.  "</p>";
-        }else{
-            $this->montant = false;
-            echo "<p>Le  " . $this->getLabel() . " n'est pas débité</p>"; 
+    public function debiter($montant){ // Methode permettant de débiter le compte. 
+         $this->solde -= $montant;
+         return "Votre solde est désormais de " .$this->solde. " " .$this->devise. "<br>";
         }
+    
+    
+    public function virement(CompteBancaire $compteCible, float $montant){ // Fonction virement depuis le compte actuel vers un compte cible.
 
-    }
-    public function virement(){
-        if($this->virer){
-            $this->virer = true;
-            echo "<p>Si un virement de " .$this->getMontant(). " " .$this->devise. " du " . $this->getLabel() .  
-             " est effectué alors le solde du " .$this->getLabel(). " sera de " .$this->calculerDebit(). " " .$this->devise. "</p>"; 
-        }else{
-            $this->virer = false;
-            echo "<p>Le virement du " . $this->getLabel() . " n'a pas été effectué</p>"; 
-        }
-
-    }
+            if (($this->getSolde() - $montant) < 0) { // Si le solde du compte actuel le permet, alors on effectue le virement.
+    
+                return "Solde insuffisant pour effectuer ce virement. <br>";
+    
+            } else {
+    
+                $this->debiter($montant); // On débite de la valeur demandée le compte actuel.
+    
+                return "Virement de " .$montant $this->devise.  "effectué<br>";
+    
+                $compteCible->crediter($montant); // On crédite le compte cible.            
+    
+            }       
+           
+        }      
     
     //getter-setter
     public function getLabel(){
@@ -98,5 +75,7 @@ class CompteBancaire {
     public function getMontant(){
         return $this->montant;
     }
+
 }
+
 ?>

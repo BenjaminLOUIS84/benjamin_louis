@@ -11,40 +11,53 @@
 
 <body>
 <h1>Exercice CINEMA</h1>
-<p>Vous êtes chargé(e) de créer un projet orienté objet permettant de gérer des livres et leurs auteurs respectifs.<br>
-Les livres sont caractérisés par un titre, un nombre de pages, une année de parution, un prix et un auteur.<br>
-Un auteur comporte un nom et un prénom.Une méthode toString() sera appréciée dans chacune de vos classes.<br>
-Vous implémenterez une méthode afficherBibliographie() qui permettra d’afficher la bibliographie complète d’un auteur :<br></p>
-<h2>Les Livres de Stéphen King</h2>
-<p> Ca (1986): 1138 pages/ 20€<br>
-Simetierre (1983): 374 pages/ 15€<br>
-Le Fléau (1978): 823 pages/ 14€<br>
-Shining (1977): 447 pages/ 16€<br></p>
-
+<p>Vous avez en charge de gérer différentes entités autour de la thématique du cinéma.<br>
+Les films seront caractérisés par leur titre, leur date de sortie en France, leur durée (en minutes)<br>
+ainsi que leur réalisateur (unique, avec nom, prénom, sexe et date de naissance).<br>
+Un résumé du film (synopsis) pourra éventuellement être renseigné.<br>
+Chaque film est caractérisé par un seul genre cinématographique (science-fiction, aventure, action, ...).<br>
+Votre application devra recenser également les acteurs de chacun des films.<br>
+On désire connaître le nom, le prénom, le sexe et la date de naissance de l’acteur<br>
+ainsi que le rôle (nom du personnage) joué par l’acteur dans le(s) film(s) concerné(s).<br>
+Il serait intéressant d'utiliser la notion d'héritage entre classes dans cet exercice.<br>
+A vous de le mettre en place correctement !<br>
+Attention, le rôle (par exemple James Bond) ne doit être instancié qu'une seule fois<br>
+(dans la mesure où ce rôle a été incarné par plusieurs acteurs.)<br>
+On doit pouvoir :<br>
+Lister la liste des acteurs ayant incarné un rôle précis<br>
+(ex: les acteurs ayant joué le rôle de Batman : Michael Keaton, Val Kilmer, George Clooney, …)<br>
+Lister le casting d'un film<br>
+(dans le film Star Wars Episode IV, Han Solo a été incarné par Harrison Ford, Luke Skywalker a été incarné par Mark Hamill, ...)<br>
+Lister les films par genre (exemple : le genre SF est associé à X films : Star Wars, Blade Runner, ...)<br>
+Lister la filmographie d'un acteur (dans quels films a-t-il joué ?)<br>
+Lister la filmographie d'un réalisateur (quels sont les films qu'a réalisé ce réalisateur ?)<br></p>
 
 <?php
 
-include "Auteurs.php";// importer les 2 classes
-include "Livres.php";
+//////////////////////////////////////////////////////Importer les classes////////////////////////////////////////////////
+
+include "Film.php";
+include "Realisateur.php";
+include "Acteur.php";
 
 // instancier un auteur
 
-$auteur1 = new Auteur("KING", "Stéphen");
+// $auteur1 = new Auteur("KING", "Stéphen");
 
-echo"<br>";
-echo $auteur1;
-echo"<br>";
+// echo"<br>";
+// echo $auteur1;
+// echo"<br>";
 
 // instancier les livres de l'auteur
 
-$livres1 = new Livre("Ca", 1986, 1138, 20, $auteur1);
-$livres2 = new Livre("Simetierre", 1983, 374, 15, $auteur1);
-$livres3 = new Livre("Le Fléau", 1978, 823, 14, $auteur1);
-$livres4 = new Livre("Shining", 1977, 447, 16, $auteur1);
+// $livres1 = new Livre("Ca", 1986, 1138, 20, $auteur1);
+// $livres2 = new Livre("Simetierre", 1983, 374, 15, $auteur1);
+// $livres3 = new Livre("Le Fléau", 1978, 823, 14, $auteur1);
+// $livres4 = new Livre("Shining", 1977, 447, 16, $auteur1);
 
 
-echo $auteur1->afficherBibliographie();
-echo"<br>";
+// echo $auteur1->afficherBibliographie();
+// echo"<br>";
 
 
 ?>

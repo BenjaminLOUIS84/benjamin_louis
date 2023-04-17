@@ -22,7 +22,7 @@ class Auteur{
   }
 
   public function __toString(){
-    return "Les Livres de " .$this->name." ".$this->firstname."<br>";
+    return "Les Livres de " .$this->firstname." ".$this->name."<br>";
   }
 
 }

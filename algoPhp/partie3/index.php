@@ -24,8 +24,8 @@ Shining (1977): 447 pages/ 16€<br></p>
 
 <?php
 
-include "Auteurs.php";// importer les 2 classes
-include "Livres.php";
+include "Auteur.php";// importer les 2 classes
+include "Livre.php";
 
 // instancier un auteur
 

@@ -128,9 +128,9 @@ $compte4 = new CompteBancaire("Compte courant 4",100,50,"euros",$personne2);
         echo "<br>";
         echo "-------------------------------------------------";
 //////////////////////////////////////////////////Afficher l'ensemble des comptes/////////////////////////////////////////
-        echo $personne1->afficherCompte();
+        echo $personne1->afficherComptes();
         echo "<br>";
-        echo $personne2->afficherCompte();
+        echo $personne2->afficherComptes();
         echo "<br>";
 
     ?>

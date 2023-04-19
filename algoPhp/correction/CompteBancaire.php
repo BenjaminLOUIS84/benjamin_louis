@@ -64,7 +64,7 @@ class CompteBancaire {
         .$this->montant." ".$this->devise. " pour effectuer une opération<br>";
     }
 
-    public function __tostring(){ // Retourne toutes les infos d'un livre dont l'auteur.
+    public function __toString(){ // Retourne toutes les infos d'un livre dont l'auteur.
         return $this->getLabel();  
     }
     

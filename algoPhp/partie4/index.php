@@ -36,29 +36,33 @@ Lister la filmographie d'un réalisateur (quels sont les films qu'a réalisé ce
 
 //////////////////////////////////////////////////////Import class////////////////////////////////////////////////
 
-include "Movie.php";
-include "Director.php";
-//include "Star.php";
+spl_autoload_register(function ($class_name){
+ require 'classes/'. $class_name .'.php';
+});
 
-// instance movies
+// Equivaut à ci dessouss
+// include "Movie.php";
+// include "Person.php";
+// include "Gender.php";
 
-$movie1 = new Movie("STARWARS",1977,120,"Science-fiction","Résumé",$director1);
 
-// instance directors
+// Instance movies
 
-$director1 = new Director("George","LUCAS","Masculin",1944);
 
+
+// Instance person
+
+
+
+$person1 = new Person("LUCAS","George","Masculin","1944-05-14");
+echo $person1;
 echo "<br>";
-//echo $director1;
-echo "<br>";
 
-// instance stars
 
-echo $director1->displayFilmography();
-echo"<br>";
 
 ?>
 
 </body>
+
 
 </html>

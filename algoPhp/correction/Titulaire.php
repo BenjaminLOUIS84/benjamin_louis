@@ -67,12 +67,11 @@ class Titulaire{
 
 ///////////////////////////////////////////////////////Méthode pour afficher tous les livres//////////////////////////////////////////
 
-    public function afficherCompte(){
+    public function afficherComptes(){
 
         $comptes = "Les comptes de " .$this->prenom. " " .$this->nom. " :<br>";
     
-      foreach ($this->comptes as $count){
-    
+        foreach ($this->comptes as $count){
           $comptes = $comptes. $count->getAllCount();               
         }
     

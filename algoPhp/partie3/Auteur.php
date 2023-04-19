@@ -36,8 +36,8 @@ class Auteur{
 
   //methodes
   public function ajouterBibliographie(Livre $book) {
-  $this->bibliography[] = $book;
-  // Equivalent à : array_push($this->bibliography, $bibliography);
+    $this->bibliography[] = $book;
+    // Equivalent à : array_push($this->bibliography, $bibliography);
   }
 
   
@@ -45,10 +45,9 @@ class Auteur{
   
   public function  afficherBibliographie(){
 
-    $bibliography = "Livres de " .$this->firstname. " " .$this->name. " :<br>";
+    $bibliography = "Livres de " .$this. " :<br>";
 
-  foreach ($this->bibliography as $book){
-
+    foreach ($this->bibliography as $book){
       $bibliography = $bibliography. $book->getAllBook();               
     }
 

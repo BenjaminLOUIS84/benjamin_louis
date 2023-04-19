@@ -11,7 +11,7 @@ private string $gender;
 private string $resume;
 
 private Director $director;
-//private Star $star;
+
 
 ////////////////////////////////////////////Constructor///////////////////////////////////////////
 
@@ -87,7 +87,7 @@ public function getAllMovies(){
     Synopsis : " .$this->resume. "<br>";
   }
  
-  public function __tostring(){ // Retourne toutes les infos d'un film.
+  public function __toString(){ // Retourne toutes les infos d'un film.
 
     return $this->getTitle();
     

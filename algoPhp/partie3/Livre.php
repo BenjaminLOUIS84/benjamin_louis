@@ -5,12 +5,12 @@ class Livre {
   private string $title;
   private int $pages;
   private int $year;
-  private int $price;
+  private float $price;
 
   private Auteur $auteur; //Pour lier l'auteur à sa bibliographie
     
   //constructeur
-  public function __construct(string $title,int $pages,int $year,int $price, Auteur $auteur){
+  public function __construct(string $title,int $pages,int $year,float $price, Auteur $auteur){
 
     $this->title = $title;
     $this->pages = $pages;
@@ -62,7 +62,7 @@ class Livre {
     et coûte : ".$this->price. "€<br>";
   }
  
-  public function __tostring(){ // Retourne toutes les infos d'un livre dont l'auteur.
+  public function __toString(){ // Retourne toutes les infos d'un livre dont l'auteur.
 
     return $this->getTitle();
     

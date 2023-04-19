@@ -1,25 +1,25 @@
 <?php
 
-class Director{
+class Person{
 
 ////////////////////////////////////////////Attributes///////////////////////////////////////////
 
 private string $name;
 private string $firstname;
 private string $sex;
-private int $birthDate;
+private DateTime $birthDate;
 
 private array $filmography;
 
 ////////////////////////////////////////////Constructor///////////////////////////////////////////
 
-public function __construct(string $name, string $firstname, string $sex, int $birthDate){
+public function __construct(string $name, string $firstname, string $sex, string $birthDate){
     $this->name = $name;
     $this->firstname = $firstname;
     $this->sex = $sex;
-    $this->birthDate = $birthDate;
+    $this->birthDate = new DateTime($birthDate);
     $this->filmography = [];
-  }
+}
 
 ////////////////////////////////////////////Getters///////////////////////////////////////////
 
@@ -32,7 +32,7 @@ public function getName(){
 public function getSex(){
     return $this->sex;
 }
-public function getbirthDate(){
+public function getBirthDate(){
     return $this->birthDate;
 }
 
@@ -47,7 +47,7 @@ public function setName(string $name){
 public function setSex(string $sex){
     $this->sex = $sex;
 }
-public function setBirthDate(int $birthDate){
+public function setBirthDate(DateTime $birthDate){
     $this->birthDate = $birthDate;            
 }
 
@@ -59,7 +59,7 @@ public function addFilmography(Movie $movies) {
 
 public function  displayFilmography(){
 
-    $filmography = "Les films de " .$this->firstname. " " .$this->name. " :<br>";
+    $filmography = "Les films réalisés par " .$this->firstname. " " .$this->name. " :<br>";
 
         foreach ($this->filmography as $movies){
 
@@ -69,13 +69,35 @@ public function  displayFilmography(){
     return $filmography;  
 }
 
-public function __tostring(){ 
-
+public function __toString(){ 
     return $this->getFirstname(). " " .$this->getName()." est un réalisateur de sexe "
-    .$this->getSex(). "et né en ".$this->getBirthDate(). "<br>";
+    .$this->getSex(). " et né le ".$this->birthDate->format("d/m/Y")."<br>";
 } 
 
 } 
+
+// class Director extends Person{
+    
+//     public function __construct(string $name, string $firstname, string $sex, string $birthDate){
+//         parent::__construct(string $name, string $firstname, string $sex, string $birthDate);      
+//     }
+//     public function fetch(){
+//         echo $this->getFirstname(). " " .$this->getName()." est un réalisateur de sexe "
+//         .$this->getSex(). " et né le ".$this->birthDate->format("d/m/Y")."<br>"; 
+//     }
+// }
+
+// class Actor extends Person{
+    
+//     public function __construct(string $name, string $firstname, string $sex, string $birthDate){
+//         parent::__construct(string $name, string $firstname, string $sex, string $birthDate);      
+//     }
+//     public function fetch(){
+//         echo $this->getFirstname(). " " .$this->getName()." est un acteur de sexe "
+//         .$this->getSex(). " et né le ".$this->birthDate->format("d/m/Y")."<br>";  
+//     }
+//}
+
 ?>
 
 

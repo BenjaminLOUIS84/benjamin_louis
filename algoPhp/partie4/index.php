@@ -35,30 +35,107 @@ Lister la filmographie d'un réalisateur (quels sont les films qu'a réalisé ce
 <h2>Résultat de l'exercice</h2>
 
 <?php
+  //////////////////////////////////////////////////////Import all classes////////////////////////////////////////////////
 
-//////////////////////////////////////////////////////Import class////////////////////////////////////////////////
+  spl_autoload_register(function ($class_name){
+  require 'classes/'. $class_name .'.php';
+  });
+      //////////////////////////////////////////////////////////////////////////////////// Instance directors 
 
-spl_autoload_register(function ($class_name){
- require 'classes/'. $class_name .'.php';
-});
+    $director1 = new Director("LUCAS","George","Masculin","1944-05-14");
+    $director2 = new Director("BURTON","Tim","Masculin","1958-08-25");
+      
+  //////////////////////////////////////////////////////////////////////////////////// Instance movies
+
+    $movie1 = new Movie("STARWARS",1977,130,"L'histoire de Star Wars, se déroule dans une galaxie qui est le théâtre d'affrontements entre les Chevaliers Jedi et les Seigneurs Sith.<br>
+    Les Jedis maîtrisent le Côté lumineux de la Force, pouvoir bénéfique et défensif, pour maintenir la paix dans la galaxie.<br>
+    Les Sith utilisent le Côté obscur, pouvoir nuisible et destructeur, pour leurs usages personnels et pour dominer la galaxie.");
+
+    $movie2 = new Movie("BATMAN",1989,126,"Enfant, le milliardaire Bruce Wayne voit ses parents assassinés par un voleur des rues, qui en voulait au collier de perles de sa mère.<br>
+    L'orphelin jure de venger leur mort en se lançant dans une bataille à vie contre le crime organisé.<br>
+    Pour cela, il crée un justicier masqué nommé Batman, et cache cette identité secrète derrière celle d'une image de playboy flambeur.");
+
+  //////////////////////////////////////////////////////////////////////////////////// Instance actors
+
+    $actor1 = new Actor("FORD","Harrison","Masculin","1942-07-13");
+    $actor2 = new Actor("KEATON","Mickaël","Masuclin","1951-09-05");
+    
+  //////////////////////////////////////////////////////////////////////////////////// Instance movies's genders 
+  
+    $gender1 = new Gender("Science-fiction");
+    $gender2 = new Gender("Action");
+    $gender3 = new Gender("Aventure");
+
+  //////////////////////////////////////////////////////////////////////////////////// Instance movies's casting
 
 
-// Instance director & actor
+  //////////////////////////////////////////////////////////////////////////////////// Instance actor's roles in movies
+  
+    $hero1 = new Role("Han Solo");
 
-$person1 = new Person("LUCAS","George","Masculin","1944-05-14");
-echo $person1->getInfos();
-echo "<br>";
-echo $person1->getMoviesInfos();
+  //////////////////////////////////////////////////////////////////////////////////// Display Directors's informations
+  
+    echo $director1->getInfos();
+    echo $director2->getInfos();
+?>
+<!--//////////////////////////////////////////////////////////////////////////// Display Directors's informations of movies//////////////////////-->
 
+  <div style="display: flex; flex-direction: row; justify-content: flex-start; align-items: center; text-align: left; gap: 20px; font-size:0.7em;">
+    <div  style="display: flex; flex-direction: column; justify-content: flex-start; align-items: left; text-align: left;">
+    <?php
+      echo "<br>";
+      echo $director1->getMoviesInfos();
+      
+      echo $movie1->getInfos();
+      echo "<br>";
+      echo $gender1->getInfos();
+      echo "<br>";
+      echo "*************************************************************************************************************";
+    
+    ?>
+    </div>
+    <div  style="display: flex; flex-direction: column; justify-content: flex-start; align-items: left; text-align: left;">
+    <?php
+      echo "<br>";
+      echo $director2->getMoviesInfos();
+      
+      echo $movie2->getInfos();
+      echo "<br>";
+      echo $gender1->getInfos();
+      echo "<br>";
+      echo "*************************************************************************************************************";
+    
+    ?>
+    </div>
+  </div>
 
+<?php
+  //////////////////////////////////////////////////////////////////////////////////// Display Actors's informations
+    echo "<br>";
+    echo $actor1->getInfos();
+    echo $actor2->getInfos();
+?>
+  <div style="display: flex; flex-direction: row; justify-content: flex-start; align-items: center; text-align: left; gap: 20px; font-size:0.7em;">
 
-// Instance movies
+    <?php 
+  //////////////////////////////////////////////////////////////////////////////////// Display Actor's roles in movies
 
-$movie1 = new Movie("STARWARS",1977,130,"Dans une Galaxie Lointaine...");
-echo $movie1->getInfos();
-echo"<br>";
+      echo "<br>";
+      echo $actor1->getFirstname()." ".$actor1->getName(). " a joué dans les films suivant: <br>";
+      echo "<br>";
+      echo $movie1->getTitle()."<br>";
+      echo "<br>";
+      echo "***********************************************************************************************************";
+      echo "<br>";
+      echo $actor2->getFirstname()." ".$actor2->getName(). " a joué dans les films suivant: <br>";
+      echo "<br>";
+      echo $movie2->getTitle()."<br>";
+      echo "<br>";
+      echo "***********************************************************************************************************";
+    ?>
+  </div>
 
-
+<?php
 
 
 ?>

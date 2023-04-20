@@ -1,34 +1,36 @@
 <?php
 
-class Gender{
+class Role {
     ////////////////////////////////////////////Attributes///////////////////////////////////////////
-    private string $type;
+    private string $hero;
      
     ////////////////////////////////////////////Constructor///////////////////////////////////////////
 
-    public function __construct(string $type){
-        
-        $this->type = $type;
+    public function __construct(string $hero){
+       
+        $this->hero = $hero;
      }
+ 
     ////////////////////////////////////////////Getter & Setter///////////////////////////////////////////
 
-    public function getType():string
+    public function getHero():string
     {
-        return $this->type;
+        return $this-hero;
     }
 
-    public function setType($type)
+    public function setHero($hero)
     {
-        $this->type = $type;
+        $this->hero = $hero;
         return $this;
     }
     ////////////////////////////////////////////Method///////////////////////////////////////////
 
     public function getInfos(){ 
-        return "Genre :" .$this->getType();
+        return $this->getHero();
     }
 
 }
+
 
 ?>
 

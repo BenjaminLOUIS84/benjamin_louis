@@ -9,14 +9,15 @@ class Movie{
     private int $duration;
     private string $resume;
 
+    //private Gender $gender;
     //private Director $director;
     //private Actor $actor;
-    //private Gender $gender;
+    
 
     ////////////////////////////////////////////Constructor///////////////////////////////////////////
 
-    public function __construct(string $title, int $date, int $duration, string $resume, 
-                                //Director $director,Actor $actor, Gender $gender
+    public function __construct(string $title, int $date, int $duration, string $resume
+                                //Director $director,Actor $actor, 
                                 ){
 
         $this->title = $title;
@@ -24,13 +25,15 @@ class Movie{
         $this->duration = $duration;
         $this->resume = $resume;
 
-        //$this->director = $director;
-        //$this->actor = $actor;
         //$this->gender = $gender;
 
+        //$this->director = $director;
+        //$this->actor = $actor;
+        
+        //$gender->addGender($this);
         //$director->addDirector($this);
         //$actor->addActor($this);
-        //$gender->addGender($this);
+        
     }
 
     ////////////////////////////////////////////Getters///////////////////////////////////////////
@@ -67,13 +70,10 @@ class Movie{
     public function getInfos(){
         return "<br>" .$this->getTitle(). " produit en " .$this->getDate(). 
         "<br>Durée : " .$this->getDuration()." minutes<br>
-        Synopsis : " .$this->getResume(). "<br>";
+        <br>Synopsis : <br>" .$this->getResume(). "<br>";
     }
  
-    // public function __toString(){ // Retourne toutes les infos d'un film.
-    //     return $this->getTitle();
-    // } 
-
+    
 
     
 }

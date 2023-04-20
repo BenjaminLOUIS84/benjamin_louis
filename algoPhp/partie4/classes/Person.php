@@ -22,16 +22,16 @@ class Person{
     }
     ////////////////////////////////////////////Getters///////////////////////////////////////////
 
-    public function getFirstname(){
+    public function getFirstname():string{
         return $this->firstname;
     }
-    public function getName(){
+    public function getName():string{
         return $this->name;
     } 
-    public function getSex(){
+    public function getSex():string{
         return $this->sex;
     }
-    public function getBirthDate(){
+    public function getBirthDate():DateTime{
         return $this->birthDate;
     }
     ////////////////////////////////////////////Setters///////////////////////////////////////////
@@ -50,11 +50,7 @@ class Person{
     }
     ////////////////////////////////////////////Methods///////////////////////////////////////////
 
-    public function getInfos(){ 
-        return $this->getFirstname(). " " .$this->getName().
-        " est un réalisateur de sexe ".$this->getSex().
-        " et né le ".$this->getBirthDate()->format("d/m/Y")."<br>";
-    } 
+     
     public function addMovie(Movie $movie) {
         $this->movies[] = $movie;
     }

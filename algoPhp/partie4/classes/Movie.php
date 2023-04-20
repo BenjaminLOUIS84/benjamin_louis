@@ -2,97 +2,80 @@
 
 class Movie{
 
-////////////////////////////////////////////Attributes///////////////////////////////////////////
+    ////////////////////////////////////////////Attributes///////////////////////////////////////////
 
-private string $title;
-private int $date;
-private int $duration;
-private string $gender;
-private string $resume;
+    private string $title;
+    private int $date;
+    private int $duration;
+    private string $resume;
 
-private Director $director;
+    //private Director $director;
+    //private Actor $actor;
+    //private Gender $gender;
 
+    ////////////////////////////////////////////Constructor///////////////////////////////////////////
 
-////////////////////////////////////////////Constructor///////////////////////////////////////////
+    public function __construct(string $title, int $date, int $duration, string $resume, 
+                                //Director $director,Actor $actor, Gender $gender
+                                ){
 
-public function __construct(string $title, int $date, int $duration, string $gender, string $resume, $director){
+        $this->title = $title;
+        $this->date = $date;
+        $this->duration = $duration;
+        $this->resume = $resume;
 
-$this->title = $title;
-$this->date = $date;
-$this->duration = $duration;
-$this->gender = $gender;
-$this->resume = $resume;
-$this->director = $director;
-//$this->star = $star;
+        //$this->director = $director;
+        //$this->actor = $actor;
+        //$this->gender = $gender;
 
-$director->addDirector($this);
-//$star->addStar($this);
-}
+        //$director->addDirector($this);
+        //$actor->addActor($this);
+        //$gender->addGender($this);
+    }
 
-////////////////////////////////////////////Getters///////////////////////////////////////////
+    ////////////////////////////////////////////Getters///////////////////////////////////////////
 
-public function getTitle(){
-    return $this->title;
-}
-public function getDate(){
-    return $this->date;
-}
-public function getDuration(){
-    return $this->duration;
-}
-public function getGender(){
-    return $this->gender;
-}
-public function getResume(){
-    return $this->resume;
-}
-public function getDirector(){
-        return $this->director;
-}
-// public function getStar(){
-//         return $this->star;
-// }  
+    public function getTitle():string{
+        return $this->title;    
+    }
+    public function getDate():int{
+        return $this->date;
+    }
+    public function getDuration():int{
+        return $this->duration;
+    }
+    public function getResume():string{
+        return $this->resume;   
+    }
 
-////////////////////////////////////////////Setters///////////////////////////////////////////
+    ////////////////////////////////////////////Setters///////////////////////////////////////////
 
-public function setTitle(string $title){
-    $this->title = $title;
-}
-public function setDate(int $date){
-    $this->date = $date;
-}
-public function setDuration(int $duration){
-    $this->duration = $duration;
-}
-public function setGender(string $gender){
-    $this->gender = $gender;
-}
-public function setResume(string $resume){
-    $this->resume = $resume;
-}
-public function setDirector(string $director){
-    $this->director = $director;
-}
-// public function setStar(string $star){
-//     $this->star = $star;
-// }
+    public function setTitle(string $title){
+        $this->title = $title;
+    }
+    public function setDate(int $date){
+        $this->date = $date;
+    }
+    public function setDuration(int $duration){
+        $this->duration = $duration;
+    }
+    public function setResume(string $resume){
+        $this->resume = $resume;
+    }
+    ////////////////////////////////////////////Methods///////////////////////////////////////////
 
-////////////////////////////////////////////Methods///////////////////////////////////////////
-
-public function getAllMovies(){
-    return $this->title. " produit en " .$this->date. "par" .$this->director. "<br>
-    Durée :" .$this->duration." minutes<br>
-    Genre :" .$this->gender. "<br>
-    Distribution :" .$this->star. "<br>
-    Synopsis : " .$this->resume. "<br>";
-  }
+    public function getInfos(){
+        return "<br>" .$this->getTitle(). " produit en " .$this->getDate(). 
+        "<br>Durée : " .$this->getDuration()." minutes<br>
+        Synopsis : " .$this->getResume(). "<br>";
+    }
  
-  public function __toString(){ // Retourne toutes les infos d'un film.
+    // public function __toString(){ // Retourne toutes les infos d'un film.
+    //     return $this->getTitle();
+    // } 
 
-    return $this->getTitle();
+
     
-} 
-
 }
 
 ?>

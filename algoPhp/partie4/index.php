@@ -32,6 +32,8 @@ Lister les films par genre (exemple : le genre SF est associé à X films : Star
 Lister la filmographie d'un acteur (dans quels films a-t-il joué ?)<br>
 Lister la filmographie d'un réalisateur (quels sont les films qu'a réalisé ce réalisateur ?)<br></p>
 
+<h2>Résultat de l'exercice</h2>
+
 <?php
 
 //////////////////////////////////////////////////////Import class////////////////////////////////////////////////
@@ -41,15 +43,21 @@ spl_autoload_register(function ($class_name){
 });
 
 
-// Instance movies
-
-
-
-// Instance person
+// Instance director & actor
 
 $person1 = new Person("LUCAS","George","Masculin","1944-05-14");
-echo $person1->getInfoPerson();
+echo $person1->getInfos();
 echo "<br>";
+echo $person1->getMoviesInfos();
+
+
+
+// Instance movies
+
+$movie1 = new Movie("STARWARS",1977,130,"Dans une Galaxie Lointaine...");
+echo $movie1->getInfos();
+echo"<br>";
+
 
 
 

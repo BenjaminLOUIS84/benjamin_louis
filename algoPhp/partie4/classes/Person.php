@@ -9,6 +9,8 @@ class Person{
     private string $sex;
     private DateTime $birthDate;
 
+    private array $movies;
+
     ////////////////////////////////////////////Constructor///////////////////////////////////////////
 
     public function __construct(string $name, string $firstname, string $sex, string $birthDate){
@@ -16,6 +18,7 @@ class Person{
         $this->firstname = $firstname;
         $this->sex = $sex;
         $this->birthDate = new DateTime($birthDate);
+        $this->movies = [];
     }
     ////////////////////////////////////////////Getters///////////////////////////////////////////
 
@@ -47,55 +50,30 @@ class Person{
     }
     ////////////////////////////////////////////Methods///////////////////////////////////////////
 
-    public function getInfoPerson(){ 
+    public function getInfos(){ 
         return $this->getFirstname(). " " .$this->getName().
         " est un réalisateur de sexe ".$this->getSex().
         " et né le ".$this->getBirthDate()->format("d/m/Y")."<br>";
     } 
+    public function addMovie(Movie $movie) {
+        $this->movies[] = $movie;
+    }
 
+    public function  getMoviesInfos(){
+    
+        $movies = "Les films réalisés par "
+        .$this->getFirstname(). " " .$this->getName(). " :<br>";
+    
+            foreach ($this->movies as $movie){
+    
+          $movies .= $movie->getInfos();               
+        }
+        return $movies;  
+    }
+   
 } 
 
-// class Director extends Person{
-    
-//     ////////////////////////////////////////////Attributes///////////////////////////////////////////
 
-//     private array $filmography;
-
-//     ////////////////////////////////////////////Constructor///////////////////////////////////////////
-
-//     public function __construct(string $name, string $firstname, string $sex, string $birthDate){
-//        parent::__construct($name, $firstname, $sexe, $birthDate);
-//        $this->bibliography = [];
-//     }
-
-//     public function addFilmography(Movie $movies) {
-//         $this->filmography[] = $movies;
-//     }
-    
-//     public function  displayFilmography(){
-    
-//         $filmography = "Les films réalisés par "
-//         .$this->getFirstname(). " " .$this->getName(). " :<br>";
-    
-//             foreach ($this->filmography as $movies){
-    
-//           $filmography = $filmography. $movies->getAllMovies();               
-//         }
-//         return $filmography;  
-//     }
-    
-// }
-
-// class Actor extends Person{
-    
-//     public function __construct(string $name, string $firstname, string $sex, string $birthDate){
-//         parent::__construct(string $name, string $firstname, string $sex, string $birthDate);      
-//     }
-//     public function fetch(){
-//         echo $this->getFirstname(). " " .$this->getName()." est un acteur de sexe "
-//         .$this->getSex(). " et né le ".$this->birthDate->format("d/m/Y")."<br>";  
-//     }
-//}
 
 ?>
 

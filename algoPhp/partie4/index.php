@@ -40,11 +40,6 @@ spl_autoload_register(function ($class_name){
  require 'classes/'. $class_name .'.php';
 });
 
-// Equivaut à ci dessouss
-// include "Movie.php";
-// include "Person.php";
-// include "Gender.php";
-
 
 // Instance movies
 
@@ -52,10 +47,8 @@ spl_autoload_register(function ($class_name){
 
 // Instance person
 
-
-
 $person1 = new Person("LUCAS","George","Masculin","1944-05-14");
-echo $person1;
+echo $person1->getInfoPerson();
 echo "<br>";
 
 

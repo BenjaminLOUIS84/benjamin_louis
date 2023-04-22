@@ -58,7 +58,7 @@ Lister la filmographie d'un réalisateur (quels sont les films qu'a réalisé ce
   //////////////////////////////////////////////////////////////////////////////////// Instance actors
 
     $actor1 = new Actor("FORD","Harrison","Masculin","1942-07-13");
-    $actor2 = new Actor("KEATON","Mickaël","Masuclin","1951-09-05");
+    $actor2 = new Actor("KEATON","Mickaël","Masculin","1951-09-05");
     $actor3 = new Actor("FISHER","Carrie","Feminin","1951-04-01");
     
   //////////////////////////////////////////////////////////////////////////////////// Instance movies's genders 

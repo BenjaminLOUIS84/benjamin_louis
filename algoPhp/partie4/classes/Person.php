@@ -63,6 +63,7 @@ class Person{
         return $difference->y;
     }
     
+    
     public function  getMoviesInfos(){
     
         $movies = "Les films réalisés par "

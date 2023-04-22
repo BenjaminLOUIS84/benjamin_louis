@@ -47,11 +47,11 @@ Lister la filmographie d'un réalisateur (quels sont les films qu'a réalisé ce
       
   //////////////////////////////////////////////////////////////////////////////////// Instance movies
 
-    $movie1 = new Movie("STARWARS",1977,130,"L'histoire de Star Wars, se déroule dans une galaxie qui est le théâtre d'affrontements entre les Chevaliers Jedi et les Seigneurs Sith.<br>
+    $movie1 = new Movie("STARWARS",1977,180,"L'histoire de Star Wars, se déroule dans une galaxie qui est le théâtre d'affrontements entre les Chevaliers Jedi et les Seigneurs Sith.<br>
     Les Jedis maîtrisent le Côté lumineux de la Force, pouvoir bénéfique et défensif, pour maintenir la paix dans la galaxie.<br>
     Les Sith utilisent le Côté obscur, pouvoir nuisible et destructeur, pour leurs usages personnels et pour dominer la galaxie.");
 
-    $movie2 = new Movie("BATMAN",1989,126,"Enfant, le milliardaire Bruce Wayne voit ses parents assassinés par un voleur des rues, qui en voulait au collier de perles de sa mère.<br>
+    $movie2 = new Movie("BATMAN",1989,120,"Enfant, le milliardaire Bruce Wayne voit ses parents assassinés par un voleur des rues, qui en voulait au collier de perles de sa mère.<br>
     L'orphelin jure de venger leur mort en se lançant dans une bataille à vie contre le crime organisé.<br>
     Pour cela, il crée un justicier masqué nommé Batman, et cache cette identité secrète derrière celle d'une image de playboy flambeur.");
 

@@ -62,7 +62,7 @@ class Person{
         $difference = date_diff($birthDate, $now);
         return $difference->y;
     }
-
+    
     public function  getMoviesInfos(){
     
         $movies = "Les films réalisés par "

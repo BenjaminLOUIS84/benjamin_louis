@@ -166,7 +166,7 @@ Lister la filmographie d'un réalisateur (quels sont les films qu'a réalisé ce
       echo "<br>";
       //echo $movie1->minutes();
       echo "<br>";
-      echo (120 / 60)."\n";
+     
 
 
 ?>

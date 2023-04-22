@@ -54,6 +54,7 @@ class Movie{
     }
     ////////////////////////////////////////////Methods///////////////////////////////////////////
     
+    
     public function getInfos(){
         return "<br>" .$this->getTitle(). " produit en " .$this->getDate(). 
         "<br>Durée : " .$this->getDuration()." minutes<br>

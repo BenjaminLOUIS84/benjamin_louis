@@ -2,33 +2,43 @@
 
 class Role {
     ////////////////////////////////////////////Attributes///////////////////////////////////////////
-    private string $hero;
+    private string $role;
+
+    private array $castings;
      
     ////////////////////////////////////////////Constructor///////////////////////////////////////////
 
-    public function __construct(string $hero){
+    public function __construct(string $role){
        
-        $this->hero = $hero;
+        $this->role = $role;
+        $this->castings = [];
      }
  
     ////////////////////////////////////////////Getter & Setter///////////////////////////////////////////
 
-    public function getHero():string
+    public function getRole():string
     {
-        return $this-hero;
+        return $this->role;
     }
 
-    public function setHero($hero)
+    public function setHero($role)
     {
-        $this->hero = $hero;
+        $this->role = $role;
         return $this;
     }
     ////////////////////////////////////////////Method///////////////////////////////////////////
 
     public function getInfos(){ 
-        return $this->getHero();
+        return $this->getRole();
     }
+    public function addCasting(Casting $castings){
+        $this->castings[] = $castings;  
+      }
 
+    public function __toString(){
+        return $this->getRole()." ";
+    }
+   
 }
 
 

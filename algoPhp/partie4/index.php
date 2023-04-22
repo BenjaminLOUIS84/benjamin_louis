@@ -59,6 +59,7 @@ Lister la filmographie d'un réalisateur (quels sont les films qu'a réalisé ce
 
     $actor1 = new Actor("FORD","Harrison","Masculin","1942-07-13");
     $actor2 = new Actor("KEATON","Mickaël","Masuclin","1951-09-05");
+    $actor3 = new Actor("FISHER","Carrie","Feminin","1951-04-01");
     
   //////////////////////////////////////////////////////////////////////////////////// Instance movies's genders 
   
@@ -66,17 +67,26 @@ Lister la filmographie d'un réalisateur (quels sont les films qu'a réalisé ce
     $gender2 = new Gender("Action");
     $gender3 = new Gender("Aventure");
 
-  //////////////////////////////////////////////////////////////////////////////////// Instance movies's casting
-
-
   //////////////////////////////////////////////////////////////////////////////////// Instance actor's roles in movies
+   
+    $role1 = new Role("Han Solo");
+    $role2 = new Role("Batman");
+    $role3 = new Role("Princess Leia");
+
+  //////////////////////////////////////////////////////////////////////////////////// Instance movies's casting
   
-    $hero1 = new Role("Han Solo");
+    $casting1 = new Casting($movie1, $role1, $actor1);
+    $casting2 = new Casting($movie2, $role2, $actor2);
+    $casting3 = new Casting($movie1, $role3, $actor3);
+ 
 
   //////////////////////////////////////////////////////////////////////////////////// Display Directors's informations
   
     echo $director1->getInfos();
+    echo "<br>";
     echo $director2->getInfos();
+    echo "<br>";
+   
 ?>
 <!--//////////////////////////////////////////////////////////////////////////// Display Directors's informations of movies//////////////////////-->
 
@@ -113,7 +123,12 @@ Lister la filmographie d'un réalisateur (quels sont les films qu'a réalisé ce
   //////////////////////////////////////////////////////////////////////////////////// Display Actors's informations
     echo "<br>";
     echo $actor1->getInfos();
+    echo "<br>";
     echo $actor2->getInfos();
+    echo "<br>";
+    echo $actor3->getInfos();
+    echo "<br>";
+    
 ?>
   <div style="display: flex; flex-direction: row; justify-content: flex-start; align-items: center; text-align: left; gap: 20px; font-size:0.7em;">
 
@@ -132,10 +147,26 @@ Lister la filmographie d'un réalisateur (quels sont les films qu'a réalisé ce
       echo $movie2->getTitle()."<br>";
       echo "<br>";
       echo "***********************************************************************************************************";
+      echo "<br>";
+      echo $actor3->getFirstname()." ".$actor3->getName(). " a joué dans les films suivant: <br>";
+      echo "<br>";
+      echo $movie1->getTitle()."<br>";
+      echo "<br>";
+      echo "***********************************************************************************************************";
     ?>
   </div>
 
 <?php
+
+      echo $casting1;
+      echo "<br>";
+      echo $casting2;
+      echo "<br>";
+      echo $casting3;
+      echo "<br>";
+      //echo $movie1->minutes();
+      echo "<br>";
+      echo (120 / 60)."\n";
 
 
 ?>

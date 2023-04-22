@@ -55,6 +55,14 @@ class Person{
         $this->movies[] = $movie;
     }
 
+    public function findAge(){
+        $now = new DateTime();
+        $birthDate = $this->birthDate;
+    
+        $difference = date_diff($birthDate, $now);
+        return $difference->y;
+    }
+
     public function  getMoviesInfos(){
     
         $movies = "Les films réalisés par "
@@ -66,7 +74,8 @@ class Person{
         }
         return $movies;  
     }
-   
+    
+    
 } 
 
 

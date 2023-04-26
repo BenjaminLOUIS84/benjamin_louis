@@ -54,10 +54,18 @@ class Movie{
     }
     ////////////////////////////////////////////Methods///////////////////////////////////////////
     
-    
+    public function calcDuration(){
+        $hour = floor($this->duration/60);
+        $minute = ($this->duration % 60);
+        $duration = $hour.'h'.$minute;
+        return $duration;
+    }
+
+
+
     public function getInfos(){
         return "<br>" .$this->getTitle(). " produit en " .$this->getDate(). 
-        "<br>Durée : " .$this->getDuration()." minutes soit : ".($this->getDuration()/60). " heures<br>
+        "<br>Durée : " .$this->getDuration()." minutes soit : ".$this->calcDuration(). " heures<br>
         
         <br>Synopsis : <br>" .$this->getResume(). "<br>";
     }
